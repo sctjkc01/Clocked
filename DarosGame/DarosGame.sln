@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarosGame", "DarosGame\DarosGame\DarosGame.csproj", "{CA2AEA28-E1FF-4A85-AE21-17F1C25C287E}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "DarosGameContent", "DarosGame\DarosGameContent\DarosGameContent.contentproj", "{78DBBC05-1FFC-49AE-9943-4B43B24232D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarosGameContent", "DarosGame\DarosGameContent\DarosGameContent.contentproj", "{78DBBC05-1FFC-49AE-9943-4B43B24232D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StickXNAEngine", "..\StickXNAEngine\StickXNAEngine\StickXNAEngine.csproj", "{507E76AD-9949-4868-879E-5B5B1C934AB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		{CA2AEA28-E1FF-4A85-AE21-17F1C25C287E}.Release|x86.Build.0 = Release|x86
 		{78DBBC05-1FFC-49AE-9943-4B43B24232D5}.Debug|x86.ActiveCfg = Debug|x86
 		{78DBBC05-1FFC-49AE-9943-4B43B24232D5}.Release|x86.ActiveCfg = Release|x86
+		{507E76AD-9949-4868-879E-5B5B1C934AB1}.Debug|x86.ActiveCfg = Debug|x86
+		{507E76AD-9949-4868-879E-5B5B1C934AB1}.Debug|x86.Build.0 = Debug|x86
+		{507E76AD-9949-4868-879E-5B5B1C934AB1}.Release|x86.ActiveCfg = Release|x86
+		{507E76AD-9949-4868-879E-5B5B1C934AB1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
