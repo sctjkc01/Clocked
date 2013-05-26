@@ -105,6 +105,8 @@
     <Compile Include="Input\TextInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Graphic\Sprite.cs" />
+    <Compile Include="Utility\IRequireResource.cs" />
+    <Compile Include="Utility\IUpdating.cs" />
     <Compile Include="Utility\Pair.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
