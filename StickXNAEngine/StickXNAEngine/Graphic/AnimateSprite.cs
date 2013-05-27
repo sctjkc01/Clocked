@@ -31,7 +31,7 @@ namespace StickXNAEngine.Graphic {
             }
         }
 
-        public override void Draw(SpriteBatch sb, Point loc, float scale = 1.0f) {
+        public override void Draw(SpriteBatch sb, Point loc, Vector2 scale) {
             states[curr].Draw(sb, loc, scale);
         }
     }

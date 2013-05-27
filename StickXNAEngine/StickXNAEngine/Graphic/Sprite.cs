@@ -18,12 +18,16 @@ namespace StickXNAEngine.Graphic {
             tint = Color.White;
         }
 
+        public void Draw(SpriteBatch sb, Point loc) {
+            Draw(sb, loc, new Vector2(1f, 1f));
+        }
+
         /// <summary>
         /// Draw this sprite.
         /// </summary>
         /// <param name="sb">The SpriteBatch to draw with.</param>
         /// <param name="loc">The location to draw this at.</param>
         /// <param name="scale">What scale to use.</param>
-        public abstract void Draw(SpriteBatch sb, Point loc, float scale = 1.0f);
+        public abstract void Draw(SpriteBatch sb, Point loc, Vector2 scale);
     }
 }

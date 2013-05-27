@@ -23,8 +23,8 @@ namespace StickXNAEngine.Graphic {
             this.src = src;
         }
 
-        public override void Draw(SpriteBatch sb, Point loc, float scale = 1.0f) {
-            sb.Draw(tex, new Rectangle(loc.X - (int)(origin.X * scale), loc.Y - (int)(origin.Y * scale), (int)(src.Width * scale), (int)(src.Height * scale)), src, this.Tint); 
+        public override void Draw(SpriteBatch sb, Point loc, Vector2 scale) {
+            sb.Draw(tex, new Rectangle(loc.X - (int)(origin.X * scale.X), loc.Y - (int)(origin.Y * scale.Y), (int)(src.Width * scale.X), (int)(src.Height * scale.Y)), src, this.Tint); 
         }
     }
 }

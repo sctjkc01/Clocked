@@ -105,9 +105,11 @@
     <Compile Include="Input\TextInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Graphic\Sprite.cs" />
+    <Compile Include="Utility\INeedMoreInit.cs" />
     <Compile Include="Utility\IRequireResource.cs" />
     <Compile Include="Utility\IUpdating.cs" />
     <Compile Include="Utility\Pair.cs" />
+    <Compile Include="Utility\PostProcessing.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
