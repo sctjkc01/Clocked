@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using StickXNAEngine.Utility;
 
 namespace DarosGame {
     /// <summary>
@@ -31,6 +32,8 @@ namespace DarosGame {
         protected override void Initialize() {
             // TODO: Add your initialization logic here
 
+            Window.AllowUserResizing = true;
+
             base.Initialize();
         }
 
@@ -41,6 +44,9 @@ namespace DarosGame {
         protected override void LoadContent() {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            Resources.InitResources(Content);
+            //PostProcessing.Res(Content);
 
             // TODO: use this.Content to load your game content here
         }
@@ -60,7 +66,7 @@ namespace DarosGame {
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime) {
             // Allows the game to exit
-            if(GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if(GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
                 this.Exit();
 
             // TODO: Add your update logic here
@@ -73,9 +79,14 @@ namespace DarosGame {
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime) {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            spriteBatch.DrawString(Resources.font, Window.ClientBounds.Width + ", " + Window.ClientBounds.Height, new Vector2(10, 10), Color.White);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
