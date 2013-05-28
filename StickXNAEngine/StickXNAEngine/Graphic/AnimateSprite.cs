@@ -28,6 +28,7 @@ namespace StickXNAEngine.Graphic {
                 if(curr >= states.Count) {
                     curr = 0;
                 }
+                count -= delay;
             }
         }
 
