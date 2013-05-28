@@ -6,6 +6,6 @@ using Microsoft.Xna.Framework;
 
 namespace StickXNAEngine.Utility {
     public interface IUpdating {
-        public void Update(GameTime gt);
+        void Update(GameTime gt);
     }
 }

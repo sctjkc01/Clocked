@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework.Content;
 
 namespace StickXNAEngine.Utility {
-    public interface IRequireResource {
-        void LoadRes(ContentManager cm);
+    public enum Direction {
+        NORTH, SOUTH, EAST, WEST, NORTHWEST, SOUTHWEST, NORTHEAST, SOUTHEAST, DENNIS
     }
 }

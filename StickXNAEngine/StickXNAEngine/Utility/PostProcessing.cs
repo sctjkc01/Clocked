@@ -9,6 +9,14 @@ namespace StickXNAEngine.Utility {
         public static List<INeedMoreInit> moreInit = new List<INeedMoreInit>();
         public static List<IRequireResource> reqRes = new List<IRequireResource>();
 
+        public static void Add(INeedMoreInit alpha) {
+            moreInit.Add(alpha);
+        }
+
+        public static void Add(IRequireResource alpha) {
+            reqRes.Add(alpha);
+        }
+
         public static void Res(ContentManager cm) {
             foreach(IRequireResource alpha in reqRes) {
                 alpha.LoadRes(cm);

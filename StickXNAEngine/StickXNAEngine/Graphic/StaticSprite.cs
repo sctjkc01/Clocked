@@ -11,16 +11,18 @@ namespace StickXNAEngine.Graphic {
         Rectangle src;
         Point origin;
 
-        public StaticSprite(Texture2D tex, Point origin) {
-            this.tex = tex;
-            this.origin = origin;
-            src = new Rectangle(0, 0, tex.Width, tex.Height);
-        }
+        public StaticSprite(Texture2D tex) : this(tex, new Point(0, 0)) { }
+
+        public StaticSprite(Texture2D tex, Point origin) : this(tex, origin, new Rectangle(0, 0, tex.Width, tex.Height)) { }
 
         public StaticSprite(Texture2D tex, Point origin, Rectangle src) {
             this.tex = tex;
             this.origin = origin;
             this.src = src;
+        }
+
+        public Rectangle Size {
+            get { return new Rectangle(0, 0, src.Width, src.Height); }
         }
 
         public override void Draw(SpriteBatch sb, Point loc, Vector2 scale) {

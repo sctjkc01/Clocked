@@ -5,6 +5,6 @@ using System.Text;
 
 namespace StickXNAEngine.Utility {
     public interface INeedMoreInit {
-        public void FinalizeInit();
+        void FinalizeInit();
     }
 }
