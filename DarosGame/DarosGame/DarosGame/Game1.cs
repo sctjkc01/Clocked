@@ -53,15 +53,15 @@ namespace DarosGame {
 
             // TODO: use this.Content to load your game content here
 
-            walker = new AnimateSprite(new TimeSpan(750000));
+            walker = new AnimateSprite(new TimeSpan(1050000));
 
             Texture2D stand = Content.Load<Texture2D>("protag/arms/stand/Stand - S");
             Texture2D walkL = Content.Load<Texture2D>("protag/arms/walk/S L"), walkR = Content.Load<Texture2D>("protag/arms/walk/S R");
 
-            walker.Add(new StaticSprite(stand, new Point(35, 105)));
+            walker.Add(new StaticSprite(stand, new Point(35, 102)));
             walker.Add(new StaticSprite(walkL, new Point(35, 102)));
             walker.Add(new StaticSprite(walkL, new Point(35, 101)));
-            walker.Add(new StaticSprite(stand, new Point(35, 105)));
+            walker.Add(new StaticSprite(stand, new Point(35, 102)));
             walker.Add(new StaticSprite(walkR, new Point(35, 102)));
             walker.Add(new StaticSprite(walkR, new Point(35, 101)));
         }
