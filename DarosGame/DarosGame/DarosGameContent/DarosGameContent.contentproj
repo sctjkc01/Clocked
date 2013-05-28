@@ -42,87 +42,468 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="test\char\E.png">
-      <Name>E</Name>
+    <Compile Include="Scenery\Chests\Chest 1 opening 1.png">
+      <Name>Chest 1 opening 1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="test\char\N.png">
-      <Name>N</Name>
+    <Compile Include="Scenery\Chests\Chest 1 opening 2.png">
+      <Name>Chest 1 opening 2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="test\char\NE.png">
-      <Name>NE</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\char\NW.png">
-      <Name>NW</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\char\S.png">
-      <Name>S</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\char\SE.png">
-      <Name>SE</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\char\SW.png">
-      <Name>SW</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\char\W.png">
-      <Name>W</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\chest\close.png">
-      <Name>close</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\chest\open.png">
-      <Name>open</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\dialogbox\box.png">
-      <Name>box</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\dialogbox\portraits\test1.png">
-      <Name>test1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\dialogbox\portraits\test2.png">
-      <Name>test2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\floor.png">
-      <Name>floor</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="test\sign.png">
-      <Name>sign</Name>
+    <Compile Include="Scenery\Chests\Chest 1.png">
+      <Name>Chest 1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="test\testfont.spritefont">
-      <Name>testfont</Name>
+    <Compile Include="Scenery\Signs\sign 1.png">
+      <Name>sign 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\arms\stand\Stand - E.png">
+      <Name>Stand - E</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - N.png">
+      <Name>Stand - N</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - NE.png">
+      <Name>Stand - NE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - NW.png">
+      <Name>Stand - NW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - S.png">
+      <Name>Stand - S</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - SE.png">
+      <Name>Stand - SE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - SW.png">
+      <Name>Stand - SW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - W.png">
+      <Name>Stand - W</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\E L.png">
+      <Name>E L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\E R.png">
+      <Name>E R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\N L.png">
+      <Name>N L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\N R.png">
+      <Name>N R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\NE L.png">
+      <Name>NE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\NE R.png">
+      <Name>NE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\NW L.png">
+      <Name>NW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\NW R.png">
+      <Name>NW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\S L.png">
+      <Name>S L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\S R.png">
+      <Name>S R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\SE L.png">
+      <Name>SE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\SE R.png">
+      <Name>SE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\SW L.png">
+      <Name>SW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\SW R.png">
+      <Name>SW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\W L.png">
+      <Name>W L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\W R.png">
+      <Name>W R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\stand\Stand - E.png">
+      <Name>Stand - E</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\stand\Stand - N.png">
+      <Name>Stand - N</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\stand\Stand - NE.png">
+      <Name>Stand - NE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\stand\Stand - NW.png">
+      <Name>Stand - NW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\stand\Stand - S.png">
+      <Name>Stand - S</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\stand\Stand - SE.png">
+      <Name>Stand - SE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\stand\Stand - SW.png">
+      <Name>Stand - SW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\stand\Stand - W.png">
+      <Name>Stand - W</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\E L.png">
+      <Name>E L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\E R.png">
+      <Name>E R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\N L.png">
+      <Name>N L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\N R.png">
+      <Name>N R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\NE L.png">
+      <Name>NE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\NE R.png">
+      <Name>NE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\NW L.png">
+      <Name>NW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\NW R.png">
+      <Name>NW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\S L.png">
+      <Name>S L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\S R.png">
+      <Name>S R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\SE L.png">
+      <Name>SE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\SE R.png">
+      <Name>SE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\SW L.png">
+      <Name>SW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\SW R.png">
+      <Name>SW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\W L.png">
+      <Name>W L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\noarms\walk\W R.png">
+      <Name>W R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\arms\Bend Down\bend down 1.png">
+      <Name>bend down 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Bend Down\bend down 2.png">
+      <Name>bend down 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\arms\Item Found\Item found  1.png">
+      <Name>Item found  1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Item Found\Item found  2.png">
+      <Name>Item found  2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Item Found\Item found  3.png">
+      <Name>Item found  3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Item Found\Item found  4.png">
+      <Name>Item found  4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Item Found\Item found  5.png">
+      <Name>Item found  5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\arms\Battle Ready\Battle ready 1.png">
+      <Name>Battle ready 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Battle Ready\Battle Ready 2.png">
+      <Name>Battle Ready 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Battle Ready\Battle Ready 3.png">
+      <Name>Battle Ready 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Battle Ready\Battle Ready 4.png">
+      <Name>Battle Ready 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Battle Ready\Battle Ready 5.png">
+      <Name>Battle Ready 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Battle Ready\Battle Ready 6.png">
+      <Name>Battle Ready 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Battle Ready\Battle Ready 7.png">
+      <Name>Battle Ready 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Battle Ready\Battle Ready 8.png">
+      <Name>Battle Ready 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Battle Ready\Battle Ready 9.png">
+      <Name>Battle Ready 9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\arms\Check Menu\Check Menu 1.png">
+      <Name>Check Menu 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 10.png">
+      <Name>Check Menu 10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 11.png">
+      <Name>Check Menu 11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 12.png">
+      <Name>Check Menu 12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 2.png">
+      <Name>Check Menu 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 3.png">
+      <Name>Check Menu 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 4.png">
+      <Name>Check Menu 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 5.png">
+      <Name>Check Menu 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 6.png">
+      <Name>Check Menu 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 7.png">
+      <Name>Check Menu 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 8.png">
+      <Name>Check Menu 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\Check Menu\Check Menu 9.png">
+      <Name>Check Menu 9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\battle\arms\Arm D 1.png">
+      <Name>Arm D 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\battle\arms\Arm U 1.png">
+      <Name>Arm U 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\battle\body\idle\Idle 1.png">
+      <Name>Idle 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\battle\body\idle\Idle 2.png">
+      <Name>Idle 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\battle\body\idle\Idle 3.png">
+      <Name>Idle 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\battle\body\idle\Idle 4.png">
+      <Name>Idle 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\battle\body\idle\Idle 5.png">
+      <Name>Idle 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="04b03.spritefont">
+      <Name>04b03</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="test\floor.png">
+      <Name>floor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
