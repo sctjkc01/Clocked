@@ -5,6 +5,6 @@ using System.Text;
 
 namespace DarosGame {
     public enum ItemFlags {
-        OLD, NEW, CRUDE, GOLD
+        OLD, NEW, CRUDE, GOLD, METAL, STONE, WOOD
     }
 }
