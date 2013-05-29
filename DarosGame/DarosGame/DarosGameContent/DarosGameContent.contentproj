@@ -47,6 +47,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="protag\arms\stand\Stand - S.png">
       <Name>Stand - S</Name>
       <Importer>TextureImporter</Importer>
