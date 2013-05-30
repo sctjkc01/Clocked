@@ -17,6 +17,14 @@ namespace DarosGame {
             get { return collisionBox; }
         }
 
+        public Point Loc {
+            get { return location; }
+        }
+
+        public GameObject() {
+            PostProcessing.Add(this);
+        }
+
         public abstract void Draw(SpriteBatch sb);
 
         public abstract void Update(GameTime gt);
@@ -27,15 +35,27 @@ namespace DarosGame {
         protected StaticSprite sprite;
 
         public override void Draw(SpriteBatch sb) {
-            sprite.Draw(sb, location);
+            sprite.Draw(sb, new Point(location.X - StaticVars.Camera.X, location.Y - StaticVars.Camera.Y));
         }
     }
 
-    public abstract class MultistateGameObject : GameObject {
-        protected StaticSprite currentSprite;
+    public abstract class Mob : GameObject {
+        protected Dictionary<Direction, Sprite> walk = new Dictionary<Direction, Sprite>(), stand = new Dictionary<Direction, Sprite>();
+        protected Boolean walking = false;
+        protected Direction facing = Direction.SOUTH;
 
         public override void Draw(SpriteBatch sb) {
-            currentSprite.Draw(sb, location);
+            try {
+                if(facing != Direction.DENNIS) {
+                    if(walking) {
+                        walk[facing].Draw(sb, new Point(location.X - StaticVars.Camera.X, location.Y - StaticVars.Camera.Y));
+                    } else {
+                        stand[facing].Draw(sb, new Point(location.X - StaticVars.Camera.X, location.Y - StaticVars.Camera.Y));
+                    }
+                }
+            } catch(KeyNotFoundException) {
+                // Ignore
+            }
         }
     }
 

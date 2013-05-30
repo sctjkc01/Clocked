@@ -19,7 +19,8 @@ namespace DarosGame {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        AnimateSprite walker;
+        TestRoom tr;
+        Protagonist p;
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -38,7 +39,8 @@ namespace DarosGame {
         protected override void Initialize() {
             // TODO: Add your initialization logic here
 
-            Window.AllowUserResizing = true;
+            tr = new TestRoom();
+            p = new Protagonist();
 
             base.Initialize();
         }
@@ -52,21 +54,9 @@ namespace DarosGame {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             Resources.InitResources(Content);
-            //PostProcessing.Res(Content);
+            PostProcessing.Res(Content);
 
             // TODO: use this.Content to load your game content here
-
-            walker = new AnimateSprite(new TimeSpan(1050000));
-
-            Texture2D stand = Content.Load<Texture2D>("protag/arms/stand/Stand - S");
-            Texture2D walkL = Content.Load<Texture2D>("protag/arms/walk/S L"), walkR = Content.Load<Texture2D>("protag/arms/walk/S R");
-
-            walker.Add(new StaticSprite(stand, new Point(35, 102)));
-            walker.Add(new StaticSprite(walkL, new Point(35, 102)));
-            walker.Add(new StaticSprite(walkL, new Point(35, 101)));
-            walker.Add(new StaticSprite(stand, new Point(35, 102)));
-            walker.Add(new StaticSprite(walkR, new Point(35, 102)));
-            walker.Add(new StaticSprite(walkR, new Point(35, 101)));
         }
 
         /// <summary>
@@ -88,7 +78,7 @@ namespace DarosGame {
                 this.Exit();
 
             // TODO: Add your update logic here
-            walker.Update(gameTime);
+            p.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -103,8 +93,17 @@ namespace DarosGame {
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
-            spriteBatch.DrawString(Resources.font, Window.ClientBounds.Width + ", " + Window.ClientBounds.Height, new Vector2(10, 10), Color.White);
-            walker.Draw(spriteBatch, new Point(50, 125));
+            int x = p.Loc.X - 400;
+            int y = p.Loc.Y - 350;
+
+            x = Math.Max(0, Math.Min(tr.Size.Width - 800, x));
+            y = Math.Max(0, Math.Min(tr.Size.Height - 600, y));
+
+            StaticVars.Camera.X = x;
+            StaticVars.Camera.Y = y;
+
+            tr.Draw(spriteBatch);
+            p.Draw(spriteBatch);
 
             spriteBatch.End();
 

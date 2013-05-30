@@ -47,13 +47,6 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="protag\arms\stand\Stand - S.png">
-      <Name>Stand - S</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="protag\arms\walk\S L.png">
       <Name>S L</Name>
       <Importer>TextureImporter</Importer>
@@ -61,6 +54,129 @@
     </Compile>
     <Compile Include="protag\arms\walk\S R.png">
       <Name>S R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\arms\stand\Stand - S.png">
+      <Name>Stand - S</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\arms\stand\Stand - E.png">
+      <Name>Stand - E</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - N.png">
+      <Name>Stand - N</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - NE.png">
+      <Name>Stand - NE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - NW.png">
+      <Name>Stand - NW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - SE.png">
+      <Name>Stand - SE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - SW.png">
+      <Name>Stand - SW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\stand\Stand - W.png">
+      <Name>Stand - W</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\arms\walk\E L.png">
+      <Name>E L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\E R.png">
+      <Name>E R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\N L.png">
+      <Name>N L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\N R.png">
+      <Name>N R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\NE L.png">
+      <Name>NE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\NE R.png">
+      <Name>NE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\NW L.png">
+      <Name>NW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\NW R.png">
+      <Name>NW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\SE L.png">
+      <Name>SE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\SE R.png">
+      <Name>SE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\SW L.png">
+      <Name>SW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\SW R.png">
+      <Name>SW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\W L.png">
+      <Name>W L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\arms\walk\W R.png">
+      <Name>W R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="test\floor.png">
+      <Name>floor</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

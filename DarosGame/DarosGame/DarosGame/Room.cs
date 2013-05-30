@@ -15,6 +15,10 @@ namespace DarosGame {
 
         protected Dictionary<Rectangle, Pair<Room, Point>> exits = new Dictionary<Rectangle, Pair<Room, Point>>();
 
+        public Rectangle Size {
+            get { return background.Size; }
+        }
+
         public Room() {
             PostProcessing.Add((IRequireResource)this);
             PostProcessing.Add((INeedMoreInit)this);
@@ -24,9 +28,8 @@ namespace DarosGame {
         /// Draws the room.
         /// </summary>
         /// <param name="sb">The SpriteBatch to draw with</param>
-        /// <param name="camera">A point defining the top left pixel of where the camera is</param>
-        public void Draw(SpriteBatch sb, Point camera) {
-            background.Draw(sb, new Point(-camera.X, -camera.Y));
+        public void Draw(SpriteBatch sb) {
+            background.Draw(sb, new Point(-StaticVars.Camera.X, -StaticVars.Camera.Y));
         }
 
         public void Add(GameObject go) {
@@ -129,7 +132,9 @@ namespace DarosGame {
         }
 
         public override void FinalizeInit() {
-            throw new NotImplementedException();
+            // Define the exits of this room
+            exits.Add(new Rectangle(535, 538, 97, 44), new Pair<Room, Point>(Room.GetRoom("Test Room"), new Point(885, 1060)));
+            exits.Add(new Rectangle(825, 1087, 127, 40), new Pair<Room, Point>(Room.GetRoom("Test Room"), new Point(582, 598)));
         }
     }
 }
