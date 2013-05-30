@@ -30,18 +30,19 @@ namespace DarosGame {
             }
 
             if(walking) {
+                int speed = 3;
                 if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
-                    location.Y -= 2;
+                    location.Y -= speed;
                 }
                 if(facing == Direction.SOUTH || facing == Direction.SOUTHEAST || facing == Direction.SOUTHWEST) {
-                    location.Y += 2;
+                    location.Y += speed;
                 }
 
                 if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
-                    location.X -= 2;
+                    location.X -= speed;
                 }
                 if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
-                    location.X += 2;
+                    location.X += speed;
                 }
             }
 
@@ -70,10 +71,10 @@ namespace DarosGame {
                 Texture2D walkL = cm.Load<Texture2D>("protag/arms/walk/" + s + " L"), walkR = cm.Load<Texture2D>("protag/arms/walk/" + s + " R");
 
                 walker.Add(new StaticSprite(stand, new Point(35, 102)));
-                walker.Add(new StaticSprite(walkL, new Point(35, 102)));
+                walker.Add(new StaticSprite(walkL, new Point(35, 103)));
                 walker.Add(new StaticSprite(walkL, new Point(35, 101)));
                 walker.Add(new StaticSprite(stand, new Point(35, 102)));
-                walker.Add(new StaticSprite(walkR, new Point(35, 102)));
+                walker.Add(new StaticSprite(walkR, new Point(35, 103)));
                 walker.Add(new StaticSprite(walkR, new Point(35, 101)));
 
                 this.walk[dirs[s]] = walker;
