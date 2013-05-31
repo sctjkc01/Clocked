@@ -47,136 +47,722 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="protag\arms\walk\S L.png">
-      <Name>S L</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\S R.png">
-      <Name>S R</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="protag\arms\stand\Stand - S.png">
-      <Name>Stand - S</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="protag\arms\stand\Stand - E.png">
-      <Name>Stand - E</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\stand\Stand - N.png">
-      <Name>Stand - N</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\stand\Stand - NE.png">
-      <Name>Stand - NE</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\stand\Stand - NW.png">
-      <Name>Stand - NW</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\stand\Stand - SE.png">
-      <Name>Stand - SE</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\stand\Stand - SW.png">
-      <Name>Stand - SW</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\stand\Stand - W.png">
-      <Name>Stand - W</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="protag\arms\walk\E L.png">
-      <Name>E L</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\E R.png">
-      <Name>E R</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\N L.png">
-      <Name>N L</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\N R.png">
-      <Name>N R</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\NE L.png">
-      <Name>NE L</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\NE R.png">
-      <Name>NE R</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\NW L.png">
-      <Name>NW L</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\NW R.png">
-      <Name>NW R</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\SE L.png">
-      <Name>SE L</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\SE R.png">
-      <Name>SE R</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\SW L.png">
-      <Name>SW L</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\SW R.png">
-      <Name>SW R</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\W L.png">
-      <Name>W L</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="protag\arms\walk\W R.png">
-      <Name>W R</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="test\floor.png">
       <Name>floor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="protag\Overworld\arms\Battle Ready\Battle ready 1.png">
+      <Name>Battle ready 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Battle Ready\Battle Ready 2.png">
+      <Name>Battle Ready 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Battle Ready\Battle Ready 3.png">
+      <Name>Battle Ready 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Battle Ready\Battle Ready 4.png">
+      <Name>Battle Ready 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Battle Ready\Battle Ready 5.png">
+      <Name>Battle Ready 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Battle Ready\Battle Ready 6.png">
+      <Name>Battle Ready 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Battle Ready\Battle Ready 7.png">
+      <Name>Battle Ready 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Battle Ready\Battle Ready 8.png">
+      <Name>Battle Ready 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Battle Ready\Battle Ready 9.png">
+      <Name>Battle Ready 9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Bend Down\bend down 1.png">
+      <Name>bend down 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Bend Down\bend down 2.png">
+      <Name>bend down 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 1.png">
+      <Name>Check Menu 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 10.png">
+      <Name>Check Menu 10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 11.png">
+      <Name>Check Menu 11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 12.png">
+      <Name>Check Menu 12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 13.png">
+      <Name>Check Menu 13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 14.png">
+      <Name>Check Menu 14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 2.png">
+      <Name>Check Menu 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 3.png">
+      <Name>Check Menu 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 4.png">
+      <Name>Check Menu 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 5.png">
+      <Name>Check Menu 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 6.png">
+      <Name>Check Menu 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 7.png">
+      <Name>Check Menu 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 8.png">
+      <Name>Check Menu 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Check Menu\Check Menu 9.png">
+      <Name>Check Menu 9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Item Found\Item found  1.png">
+      <Name>Item found  1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Item Found\Item found  2.png">
+      <Name>Item found  2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Item Found\Item found  3.png">
+      <Name>Item found  3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Item Found\Item found  4.png">
+      <Name>Item found  4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Item Found\Item found  5.png">
+      <Name>Item found  5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\E 1.png">
+      <Name>E 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\E 2.png">
+      <Name>E 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\E 3.png">
+      <Name>E 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\E 4.png">
+      <Name>E 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\E 5.png">
+      <Name>E 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\E 6.png">
+      <Name>E 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\E 7.png">
+      <Name>E 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\E 8.png">
+      <Name>E 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\N 1.png">
+      <Name>N 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\N 2.png">
+      <Name>N 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\N 3.png">
+      <Name>N 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\N 4.png">
+      <Name>N 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\N 5.png">
+      <Name>N 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\N 6.png">
+      <Name>N 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\N 7.png">
+      <Name>N 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\N 8.png">
+      <Name>N 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NE 1.png">
+      <Name>NE 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NE 2.png">
+      <Name>NE 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NE 3.png">
+      <Name>NE 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NE 4.png">
+      <Name>NE 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NE 5.png">
+      <Name>NE 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NE 6.png">
+      <Name>NE 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NE 7.png">
+      <Name>NE 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NE 8.png">
+      <Name>NE 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NW 1.png">
+      <Name>NW 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NW 2.png">
+      <Name>NW 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NW 3.png">
+      <Name>NW 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NW 4.png">
+      <Name>NW 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NW 5.png">
+      <Name>NW 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NW 6.png">
+      <Name>NW 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NW 7.png">
+      <Name>NW 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\NW 8.png">
+      <Name>NW 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\S 1.png">
+      <Name>S 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\S 2.png">
+      <Name>S 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\S 3.png">
+      <Name>S 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\S 4.png">
+      <Name>S 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\S 5.png">
+      <Name>S 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\S 6.png">
+      <Name>S 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\S 7.png">
+      <Name>S 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\S 8.png">
+      <Name>S 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SE 1.png">
+      <Name>SE 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SE 2.png">
+      <Name>SE 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SE 3.png">
+      <Name>SE 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SE 4.png">
+      <Name>SE 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SE 5.png">
+      <Name>SE 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SE 6.png">
+      <Name>SE 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SE 7.png">
+      <Name>SE 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SE 8.png">
+      <Name>SE 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SW 1.png">
+      <Name>SW 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SW 2.png">
+      <Name>SW 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SW 3.png">
+      <Name>SW 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SW 4.png">
+      <Name>SW 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SW 5.png">
+      <Name>SW 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SW 6.png">
+      <Name>SW 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SW 7.png">
+      <Name>SW 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\SW 8.png">
+      <Name>SW 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\W 1.png">
+      <Name>W 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\W 2.png">
+      <Name>W 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\W 3.png">
+      <Name>W 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\W 4.png">
+      <Name>W 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\W 5.png">
+      <Name>W 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\W 6.png">
+      <Name>W 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\W 7.png">
+      <Name>W 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\Punch\W 8.png">
+      <Name>W 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\stand\Stand - E.png">
+      <Name>Stand - E</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\stand\Stand - N.png">
+      <Name>Stand - N</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\stand\Stand - NE.png">
+      <Name>Stand - NE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\stand\Stand - NW.png">
+      <Name>Stand - NW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\stand\Stand - S.png">
+      <Name>Stand - S</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\stand\Stand - SE.png">
+      <Name>Stand - SE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\stand\Stand - SW.png">
+      <Name>Stand - SW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\stand\Stand - W.png">
+      <Name>Stand - W</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\E L.png">
+      <Name>E L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\E R.png">
+      <Name>E R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\N L.png">
+      <Name>N L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\N R.png">
+      <Name>N R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\NE L.png">
+      <Name>NE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\NE R.png">
+      <Name>NE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\NW L.png">
+      <Name>NW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\NW R.png">
+      <Name>NW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\S L.png">
+      <Name>S L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\S R.png">
+      <Name>S R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\SE L.png">
+      <Name>SE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\SE R.png">
+      <Name>SE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\SW L.png">
+      <Name>SW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\SW R.png">
+      <Name>SW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\W L.png">
+      <Name>W L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\arms\walk\W R.png">
+      <Name>W R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\stand\Stand - E.png">
+      <Name>Stand - E</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\stand\Stand - N.png">
+      <Name>Stand - N</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\stand\Stand - NE.png">
+      <Name>Stand - NE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\stand\Stand - NW.png">
+      <Name>Stand - NW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\stand\Stand - S.png">
+      <Name>Stand - S</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\stand\Stand - SE.png">
+      <Name>Stand - SE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\stand\Stand - SW.png">
+      <Name>Stand - SW</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\stand\Stand - W.png">
+      <Name>Stand - W</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\E L.png">
+      <Name>E L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\E R.png">
+      <Name>E R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\N L.png">
+      <Name>N L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\N R.png">
+      <Name>N R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\NE L.png">
+      <Name>NE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\NE R.png">
+      <Name>NE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\NW L.png">
+      <Name>NW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\NW R.png">
+      <Name>NW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\S L.png">
+      <Name>S L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\S R.png">
+      <Name>S R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\SE L.png">
+      <Name>SE L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\SE R.png">
+      <Name>SE R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\SW L.png">
+      <Name>SW L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\SW R.png">
+      <Name>SW R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\W L.png">
+      <Name>W L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="protag\Overworld\noarms\walk\W R.png">
+      <Name>W R</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

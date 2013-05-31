@@ -67,8 +67,8 @@ namespace DarosGame {
             foreach(string s in dirs.Keys) {
                 AnimateSprite walker = new AnimateSprite(delay);
 
-                Texture2D stand = cm.Load<Texture2D>("protag/arms/stand/Stand - " + s);
-                Texture2D walkL = cm.Load<Texture2D>("protag/arms/walk/" + s + " L"), walkR = cm.Load<Texture2D>("protag/arms/walk/" + s + " R");
+                Texture2D stand = cm.Load<Texture2D>("protag\Overworld\arms\stand - " + s);
+                Texture2D walkL = cm.Load<Texture2D>("protag\Overworld\arms\walk" + s + " L"), walkR = cm.Load<Texture2D>("protag\Overworld\arms\walk" + s + " R");
 
                 walker.Add(new StaticSprite(stand, new Point(35, 102)));
                 walker.Add(new StaticSprite(walkL, new Point(35, 103)));
