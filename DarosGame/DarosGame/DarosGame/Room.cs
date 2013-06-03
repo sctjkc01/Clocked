@@ -143,15 +143,15 @@ namespace DarosGame {
 
 /* //TL = Top Left. BR = Bottom Right.
 
-TL 0,0 BR 1183,317
-TL 780,318 BR 1183,341
-TL 889,342 BR 1183,348
-TL 933,349 BR 1183,356
-TL 1104,357 BR 1183,554
-TL 1166,555 BR 1183,562
-TL 1175,563 BR 1183,581
-TL 948,357 BR 1103,362
-TL 974,365 BR 1103,374
+new Rectangle(0,0,1184,317)
+new Rectangle(780,316,404,26)
+new Rectangle(889,342,295,7)
+new Rectangle(933,349,251,8)
+new Rectangle(1004,357,180,198)
+new Rectangle(1166,555,18,8)
+new Rectangle(1175,563,9,19)
+new Rectangle(938,357,66,6)
+new Rectangle(974,363,30,12)
 TL 982,376 BR 
 TL 997,385 BR 
 TL 1006,397 BR 
