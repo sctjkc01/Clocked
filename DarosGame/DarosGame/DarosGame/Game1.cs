@@ -19,7 +19,6 @@ namespace DarosGame {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        TestRoom tr;
         Protagonist p;
 
         public Game1() {
@@ -39,8 +38,10 @@ namespace DarosGame {
         protected override void Initialize() {
             // TODO: Add your initialization logic here
 
-            tr = new TestRoom();
+            Room tr = new TestRoom();
+            StaticVars.CurrRoom = tr;
             p = new Protagonist();
+            p.Loc = new Point(588, 696);
 
             base.Initialize();
         }
@@ -102,7 +103,7 @@ namespace DarosGame {
             StaticVars.Camera.X = x;
             StaticVars.Camera.Y = y;
 
-            tr.Draw(spriteBatch);
+            StaticVars.CurrRoom.Draw(spriteBatch);
             p.Draw(spriteBatch);
 
             spriteBatch.End();

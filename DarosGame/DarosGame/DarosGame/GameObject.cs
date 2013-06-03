@@ -19,6 +19,7 @@ namespace DarosGame {
 
         public Point Loc {
             get { return location; }
+            set { location = value; }
         }
 
         public GameObject() {

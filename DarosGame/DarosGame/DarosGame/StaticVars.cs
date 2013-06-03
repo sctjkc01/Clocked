@@ -7,5 +7,6 @@ using Microsoft.Xna.Framework;
 namespace DarosGame {
     public static class StaticVars {
         public static Point Camera = new Point(0, 0);
+        public static Room CurrRoom = null;
     }
 }

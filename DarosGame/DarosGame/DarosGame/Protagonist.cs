@@ -14,8 +14,6 @@ namespace DarosGame {
 
         public Protagonist() {
             ctrls = new Controls();
-
-            location = new Point(588, 696);
         }
 
         public override void Update(GameTime gt) {
