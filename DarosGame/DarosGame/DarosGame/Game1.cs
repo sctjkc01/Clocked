@@ -43,6 +43,8 @@ namespace DarosGame {
             p = new Protagonist();
             p.Loc = new Point(588, 696);
 
+
+            PostProcessing.Init();
             base.Initialize();
         }
 

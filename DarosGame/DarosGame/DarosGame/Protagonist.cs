@@ -79,6 +79,11 @@ namespace DarosGame {
                     location.Y -= speed;
                 }
             }
+            Pair<Room, Point> exit = StaticVars.CurrRoom.Exit(this);
+            if(exit != null) {
+                StaticVars.CurrRoom = exit.Item1;
+                location = exit.Item2;
+            }
 
             foreach(Direction alpha in walk.Keys) {
                 ((AnimateSprite)walk[alpha]).Update(gt);
