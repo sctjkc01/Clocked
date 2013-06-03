@@ -81,8 +81,7 @@ namespace DarosGame {
             }
             Pair<Room, Point> exit = StaticVars.CurrRoom.Exit(this);
             if(exit != null) {
-                StaticVars.CurrRoom = exit.Item1;
-                location = exit.Item2;
+                StaticVars.Exit = exit;
             }
 
             foreach(Direction alpha in walk.Keys) {

@@ -12,12 +12,22 @@ using StickXNAEngine.Utility;
 using StickXNAEngine.Graphic;
 
 namespace DarosGame {
+    public enum GameState {
+        MENU, GAME, FADEOUT, FADEIN
+    }
+
     /// <summary>
     /// This is the main type for your game
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        Texture2D blackPixel;
+        byte opacity = 0;
+        TimeSpan fade = new TimeSpan(150000), timer = new TimeSpan(0);
+
+        public static GameState currState = GameState.GAME;
 
         Protagonist p;
 
@@ -43,7 +53,6 @@ namespace DarosGame {
             p = new Protagonist();
             p.Loc = new Point(588, 696);
 
-
             PostProcessing.Init();
             base.Initialize();
         }
@@ -57,6 +66,10 @@ namespace DarosGame {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             Resources.InitResources(Content);
+
+            blackPixel = new Texture2D(GraphicsDevice, 1, 1);
+            blackPixel.SetData<Color>(new Color[] { Color.Black });
+
             PostProcessing.Res(Content);
 
             // TODO: use this.Content to load your game content here
@@ -81,7 +94,39 @@ namespace DarosGame {
                 this.Exit();
 
             // TODO: Add your update logic here
-            p.Update(gameTime);
+            if(currState == GameState.GAME) {
+                p.Update(gameTime);
+                if(StaticVars.Exit != null) {
+                    currState = GameState.FADEOUT;
+                    timer = new TimeSpan(0);
+                }
+            } else if(currState == GameState.FADEOUT) {
+                timer += gameTime.ElapsedGameTime;
+                if(timer > fade) {
+                    timer -= fade;
+                    if(opacity + 10 > 255) {
+                        opacity = 255;
+                        StaticVars.CurrRoom = StaticVars.Exit.Item1;
+                        p.Loc = StaticVars.Exit.Item2;
+                        timer = new TimeSpan(0);
+                        currState = GameState.FADEIN;
+                    } else {
+                        opacity += 10;
+                    }
+                }
+            } else if(currState == GameState.FADEIN) {
+                timer += gameTime.ElapsedGameTime;
+                if(timer > fade) {
+                    timer -= fade;
+                    if(opacity - 10 < 0) {
+                        opacity = 0;
+                        StaticVars.Exit = null;
+                        currState = GameState.GAME;
+                    } else {
+                        opacity -= 10;
+                    }
+                }
+            }
 
             base.Update(gameTime);
         }
@@ -107,6 +152,10 @@ namespace DarosGame {
 
             StaticVars.CurrRoom.Draw(spriteBatch);
             p.Draw(spriteBatch);
+
+            if(currState == GameState.FADEOUT || currState == GameState.FADEIN) {
+                spriteBatch.Draw(blackPixel, new Vector2(0, 0), null, new Color(0, 0, 0, opacity), 0f, Vector2.Zero, new Vector2(800, 600), SpriteEffects.None, 0);
+            }
 
             spriteBatch.End();
 
