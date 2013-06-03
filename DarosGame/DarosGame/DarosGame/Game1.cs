@@ -97,8 +97,8 @@ namespace DarosGame {
             int x = p.Loc.X - 400;
             int y = p.Loc.Y - 350;
 
-            x = Math.Max(0, Math.Min(tr.Size.Width - 800, x));
-            y = Math.Max(0, Math.Min(tr.Size.Height - 600, y));
+            x = Math.Max(0, Math.Min(StaticVars.CurrRoom.Size.Width - 800, x));
+            y = Math.Max(0, Math.Min(StaticVars.CurrRoom.Size.Height - 600, y));
 
             StaticVars.Camera.X = x;
             StaticVars.Camera.Y = y;

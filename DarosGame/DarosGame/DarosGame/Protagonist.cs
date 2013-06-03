@@ -14,6 +14,8 @@ namespace DarosGame {
 
         public Protagonist() {
             ctrls = new Controls();
+
+            width = 50; height = 50;
         }
 
         public override void Update(GameTime gt) {
@@ -29,17 +31,37 @@ namespace DarosGame {
 
             if(walking) {
                 int speed = 3;
+                Boolean n = false, s = false, e = false, w = false;
                 if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
                     location.Y -= speed;
+                    n = true;
                 }
                 if(facing == Direction.SOUTH || facing == Direction.SOUTHEAST || facing == Direction.SOUTHWEST) {
                     location.Y += speed;
+                    s = true;
                 }
 
                 if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
                     location.X -= speed;
+                    w = true;
                 }
                 if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
+                    location.X += speed;
+                    e = true;
+                }
+
+                //Check collisions with walls.  If we're colliding, Undo!
+                bool colliding = StaticVars.CurrRoom.CollidingWithWall(this);
+                if(colliding && n) {
+                    location.Y += speed;
+                }
+                if(colliding && s) {
+                    location.Y -= speed;
+                }
+                if(colliding && e) {
+                    location.X -= speed;
+                }
+                if(colliding && w) {
                     location.X += speed;
                 }
             }

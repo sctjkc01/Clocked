@@ -11,10 +11,10 @@ using Microsoft.Xna.Framework.Content;
 namespace DarosGame {
     public abstract class GameObject : IUpdating, IRequireResource {
         protected Point location;
-        protected Rectangle collisionBox;
+        protected int width, height;
 
         public Rectangle CollisionBox {
-            get { return collisionBox; }
+            get { return new Rectangle(location.X - (width/2), location.Y - (height/2), width, height); }
         }
 
         public Point Loc {
