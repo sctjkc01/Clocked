@@ -71,6 +71,13 @@ namespace DarosGame {
                 if(colliding && w) {
                     location.X += speed;
                 }
+                colliding = StaticVars.CurrRoom.CollidingWithWall(this);
+                if(colliding && n) {
+                    location.Y += speed;
+                }
+                if(colliding && s) {
+                    location.Y -= speed;
+                }
             }
 
             foreach(Direction alpha in walk.Keys) {
