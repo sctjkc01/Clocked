@@ -15,7 +15,7 @@ namespace DarosGame {
         public Protagonist() {
             ctrls = new Controls();
 
-            width = 50; height = 50;
+            width = 55; height = 10;
         }
 
         public override void Update(GameTime gt) {
