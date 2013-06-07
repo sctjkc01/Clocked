@@ -20,11 +20,13 @@ namespace DarosGame {
             keys[Keys.A] = new KeyboardKey(Keys.A);
             keys[Keys.S] = new KeyboardKey(Keys.S);
             keys[Keys.D] = new KeyboardKey(Keys.D);
+            keys[EZTweakVars.InteractKey] = new KeyboardKey(EZTweakVars.InteractKey);
 
             btns[Buttons.LeftThumbstickUp] = new GamePadButton(Buttons.LeftThumbstickUp);
             btns[Buttons.LeftThumbstickLeft] = new GamePadButton(Buttons.LeftThumbstickLeft);
             btns[Buttons.LeftThumbstickRight] = new GamePadButton(Buttons.LeftThumbstickRight);
             btns[Buttons.LeftThumbstickDown] = new GamePadButton(Buttons.LeftThumbstickDown);
+            btns[Buttons.B] = new GamePadButton(Buttons.B);
         }
 
         public void Update(GameTime gt) {
@@ -55,6 +57,10 @@ namespace DarosGame {
 
         private Boolean MovingRight {
             get { return keys[Keys.D].IsPressed || btns[Buttons.LeftThumbstickRight].IsPressed; }
+        }
+
+        public Boolean Interact {
+            get { return keys[EZTweakVars.InteractKey].JustPressed || btns[Buttons.B].JustPressed; }
         }
 
         public Direction Movement {
