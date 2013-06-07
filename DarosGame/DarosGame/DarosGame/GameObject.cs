@@ -9,7 +9,7 @@ using StickXNAEngine.Utility;
 using Microsoft.Xna.Framework.Content;
 
 namespace DarosGame {
-    public abstract class GameObject : IUpdating, IRequireResource {
+    public abstract class GameObject : IUpdating, IRequireResource, IComparable<GameObject> {
         protected Point location;
         protected int width, height;
 
@@ -30,6 +30,10 @@ namespace DarosGame {
 
         public abstract void Update(GameTime gt);
         public abstract void LoadRes(ContentManager cm);
+
+        public int CompareTo(GameObject other) {
+            return this.Loc.Y.CompareTo(other.Loc.Y);
+        }
     }
 
     public abstract class SimpleGameObject : GameObject {

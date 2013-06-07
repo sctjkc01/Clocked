@@ -19,6 +19,10 @@ namespace DarosGame {
             get { return background.Size; }
         }
 
+        public List<GameObject> Objects {
+            get { return objs; }
+        }
+
         public Room() {
             PostProcessing.Add((IRequireResource)this);
             PostProcessing.Add((INeedMoreInit)this);
@@ -124,6 +128,13 @@ namespace DarosGame {
             walls.Add(new Rectangle(1015, 590, 5, 18));
             walls.Add(new Rectangle(1002, 590, 13, 7));
             walls.Add(new Rectangle(1008, 597, 7, 6));
+
+            // Adding Game Objects to room
+            Add(new SceneryGameObjects.Sign(new Point(749,601)));
+
+
+            // Have Game Objects in room sorted by Y value
+            objs.Sort();
         }
 
         public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {

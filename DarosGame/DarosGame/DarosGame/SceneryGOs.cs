@@ -10,6 +10,8 @@ namespace DarosGame {
 
             public Sign(Point loc) {
                 location = loc;
+                width = 50;
+                height = 30;
             }
 
             public override void Update(GameTime gt) {

@@ -151,7 +151,16 @@ namespace DarosGame {
             StaticVars.Camera.Y = y;
 
             StaticVars.CurrRoom.Draw(spriteBatch);
-            p.Draw(spriteBatch);
+
+            bool pDrawn = false;
+            foreach(GameObject obj in StaticVars.CurrRoom.Objects) {
+                if(obj.Loc.Y > p.Loc.Y && !pDrawn) {
+                    p.Draw(spriteBatch);
+                    pDrawn = true;
+                }
+                obj.Draw(spriteBatch);
+            }
+            if(!pDrawn) p.Draw(spriteBatch);
 
             if(currState == GameState.FADEOUT || currState == GameState.FADEIN) {
                 spriteBatch.Draw(whitePixel, new Vector2(0, 0), null, new Color(0, 0, 0, opacity), 0f, Vector2.Zero, new Vector2(800, 600), SpriteEffects.None, 0);
