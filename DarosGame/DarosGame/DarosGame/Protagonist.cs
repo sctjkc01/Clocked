@@ -104,10 +104,10 @@ namespace DarosGame {
                             }
 
                             if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
+                                range.X -= EZTweakVars.PlayerInteractRange;
                                 range.Width += EZTweakVars.PlayerInteractRange;
                             }
                             if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
-                                range.X -= EZTweakVars.PlayerInteractRange;
                                 range.Width += EZTweakVars.PlayerInteractRange;
                             }
 
