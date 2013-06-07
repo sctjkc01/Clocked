@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using StickXNAEngine.Utility;
+using Microsoft.Xna.Framework.Input;
 
 namespace DarosGame {
     public static class StaticVars {
@@ -11,5 +12,13 @@ namespace DarosGame {
         public static Room CurrRoom = null;
 
         public static Pair<Room, Point> Exit = null;
+    }
+
+    public static class EZTweakVars {
+        // Interaction Variables
+        public static int PlayerInteractRange = 30; //Units: Pixels
+        public static Keys InteractKey = Keys.E; //Replace letter as you will [REQUIRES RESTART]
+
+
     }
 }
