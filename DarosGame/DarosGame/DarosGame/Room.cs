@@ -46,6 +46,11 @@ namespace DarosGame {
                     return true;
                 }
             }
+            foreach(GameObject alpha in objs) {
+                if(go != alpha && go.CollisionBox.Intersects(alpha.CollisionBox)) {
+                    return true;
+                }
+            }
             return false;
         }
 
