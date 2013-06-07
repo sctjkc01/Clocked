@@ -91,26 +91,26 @@ namespace DarosGame {
             }
 
             if(ctrls.Interact) {
+                Rectangle range = this.CollisionBox;
+                if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
+                    range.Y -= EZTweakVars.PlayerInteractRange;
+                    range.Height += EZTweakVars.PlayerInteractRange;
+                }
+                if(facing == Direction.SOUTH || facing == Direction.SOUTHEAST || facing == Direction.SOUTHWEST) {
+                    range.Height += EZTweakVars.PlayerInteractRange;
+                }
+
+                if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
+                    range.X -= EZTweakVars.PlayerInteractRange;
+                    range.Width += EZTweakVars.PlayerInteractRange;
+                }
+                if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
+                    range.Width += EZTweakVars.PlayerInteractRange;
+                }
+
                 foreach(GameObject alpha in StaticVars.CurrRoom.Objects) {
                     if(alpha is IInteractive) {
                         if(!(alpha is ISpecificFacing) || ((ISpecificFacing)alpha).RightFacing(facing)) {
-                            Rectangle range = this.CollisionBox;
-                            if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
-                                range.Y -= EZTweakVars.PlayerInteractRange;
-                                range.Height += EZTweakVars.PlayerInteractRange;
-                            }
-                            if(facing == Direction.SOUTH || facing == Direction.SOUTHEAST || facing == Direction.SOUTHWEST) {
-                                range.Height += EZTweakVars.PlayerInteractRange;
-                            }
-
-                            if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
-                                range.X -= EZTweakVars.PlayerInteractRange;
-                                range.Width += EZTweakVars.PlayerInteractRange;
-                            }
-                            if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
-                                range.Width += EZTweakVars.PlayerInteractRange;
-                            }
-
                             if(range.Contains(alpha.Loc)) {
                                 ((IInteractive)alpha).Interact();
                             }
