@@ -23,7 +23,8 @@ namespace DarosGame {
         }
 
         public GameObject() {
-            PostProcessing.Add(this);
+            PostProcessing.Add((IRequireResource)this);
+            PostProcessing.Add((IUpdating)this);
         }
 
         public abstract void Draw(SpriteBatch sb);

@@ -95,7 +95,7 @@ namespace DarosGame {
 
             // TODO: Add your update logic here
             if(currState == GameState.GAME) {
-                p.Update(gameTime);
+                PostProcessing.Update(gameTime);
                 if(StaticVars.Exit != null) {
                     currState = GameState.FADEOUT;
                     timer = new TimeSpan(0);
