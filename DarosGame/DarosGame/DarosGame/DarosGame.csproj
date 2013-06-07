@@ -116,6 +116,7 @@
     <Compile Include="Protagonist.cs" />
     <Compile Include="Resources.cs" />
     <Compile Include="Room.cs" />
+    <Compile Include="SceneryGOs.cs" />
     <Compile Include="StaticVars.cs" />
   </ItemGroup>
   <ItemGroup>

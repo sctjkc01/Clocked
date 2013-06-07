@@ -23,7 +23,7 @@ namespace DarosGame {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Texture2D blackPixel;
+        Texture2D whitePixel;
         byte opacity = 0;
         TimeSpan fade = new TimeSpan(150000), timer = new TimeSpan(0);
 
@@ -67,8 +67,8 @@ namespace DarosGame {
 
             Resources.InitResources(Content);
 
-            blackPixel = new Texture2D(GraphicsDevice, 1, 1);
-            blackPixel.SetData<Color>(new Color[] { Color.Black });
+            whitePixel = new Texture2D(GraphicsDevice, 1, 1);
+            whitePixel.SetData<Color>(new Color[] { Color.White });
 
             PostProcessing.Res(Content);
 
@@ -154,7 +154,7 @@ namespace DarosGame {
             p.Draw(spriteBatch);
 
             if(currState == GameState.FADEOUT || currState == GameState.FADEIN) {
-                spriteBatch.Draw(blackPixel, new Vector2(0, 0), null, new Color(0, 0, 0, opacity), 0f, Vector2.Zero, new Vector2(800, 600), SpriteEffects.None, 0);
+                spriteBatch.Draw(whitePixel, new Vector2(0, 0), null, new Color(0, 0, 0, opacity), 0f, Vector2.Zero, new Vector2(800, 600), SpriteEffects.None, 0);
             }
 
             spriteBatch.End();

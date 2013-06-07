@@ -63,4 +63,8 @@ namespace DarosGame {
     public interface IInteractive {
         void Interact();
     }
+
+    public interface IConversable : IInteractive {
+        // Nothing yet
+    }
 }
