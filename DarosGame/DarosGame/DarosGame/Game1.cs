@@ -54,6 +54,9 @@ namespace DarosGame {
             p.Loc = new Point(588, 696);
 
             PostProcessing.Init();
+
+            Console.WriteLine("This Console Box is here for debug testing purposes ONLY!\n");
+
             base.Initialize();
         }
 
