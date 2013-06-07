@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using StickXNAEngine.Utility;
 
 namespace DarosGame {
     namespace SceneryGameObjects {
-        public class Sign : SimpleGameObject, IConversable {
+        public class Sign : SimpleGameObject, IConversable, ISpecificFacing {
 
             public Sign(Point loc) {
                 location = loc;
@@ -23,7 +24,11 @@ namespace DarosGame {
             }
 
             public void Interact() {
-                // Interaction to come soon
+                Console.WriteLine("Sign interacted with!"); // Test Code
+            }
+
+            public bool RightFacing(Direction dir) {
+                return dir == Direction.NORTH || dir == Direction.NORTHEAST || dir == Direction.NORTHWEST;
             }
         }
     }

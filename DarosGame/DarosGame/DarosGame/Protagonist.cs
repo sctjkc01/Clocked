@@ -52,31 +52,33 @@ namespace DarosGame {
 
                 //Check collisions with walls.  If we're colliding, Undo!
                 bool colliding = StaticVars.CurrRoom.CollidingWithWall(this);
-                if(colliding && n) {
-                    location.Y += speed;
-                }
-                if(colliding && s) {
-                    location.Y -= speed;
-                }
-                colliding = StaticVars.CurrRoom.CollidingWithWall(this);
-                if(colliding && n) {
-                    location.Y -= speed;
-                }
-                if(colliding && s) {
-                    location.Y += speed;
-                }
-                if(colliding && e) {
-                    location.X -= speed;
-                }
-                if(colliding && w) {
-                    location.X += speed;
-                }
-                colliding = StaticVars.CurrRoom.CollidingWithWall(this);
-                if(colliding && n) {
-                    location.Y += speed;
-                }
-                if(colliding && s) {
-                    location.Y -= speed;
+                if(colliding) {
+                    if(colliding && n) {
+                        location.Y += speed;
+                    }
+                    if(colliding && s) {
+                        location.Y -= speed;
+                    }
+                    colliding = StaticVars.CurrRoom.CollidingWithWall(this);
+                    if(colliding && n) {
+                        location.Y -= speed;
+                    }
+                    if(colliding && s) {
+                        location.Y += speed;
+                    }
+                    if(colliding && e) {
+                        location.X -= speed;
+                    }
+                    if(colliding && w) {
+                        location.X += speed;
+                    }
+                    colliding = StaticVars.CurrRoom.CollidingWithWall(this);
+                    if(colliding && n) {
+                        location.Y += speed;
+                    }
+                    if(colliding && s) {
+                        location.Y -= speed;
+                    }
                 }
             }
             Pair<Room, Point> exit = StaticVars.CurrRoom.Exit(this);
@@ -86,6 +88,35 @@ namespace DarosGame {
 
             foreach(Direction alpha in walk.Keys) {
                 ((AnimateSprite)walk[alpha]).Update(gt);
+            }
+
+            if(ctrls.Interact) {
+                foreach(GameObject alpha in StaticVars.CurrRoom.Objects) {
+                    if(alpha is IInteractive) {
+                        if(!(alpha is ISpecificFacing) || ((ISpecificFacing)alpha).RightFacing(facing)) {
+                            Rectangle range = this.CollisionBox;
+                            if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
+                                range.Y -= EZTweakVars.PlayerInteractRange;
+                                range.Height += EZTweakVars.PlayerInteractRange;
+                            }
+                            if(facing == Direction.SOUTH || facing == Direction.SOUTHEAST || facing == Direction.SOUTHWEST) {
+                                range.Height += EZTweakVars.PlayerInteractRange;
+                            }
+
+                            if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
+                                range.Width += EZTweakVars.PlayerInteractRange;
+                            }
+                            if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
+                                range.X -= EZTweakVars.PlayerInteractRange;
+                                range.Width += EZTweakVars.PlayerInteractRange;
+                            }
+
+                            if(range.Contains(alpha.Loc)) {
+                                ((IInteractive)alpha).Interact();
+                            }
+                        }
+                    }
+                }
             }
         }
 
