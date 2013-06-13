@@ -1,0 +1,8 @@
+Question 1: Let's start with 20 frames.
+Question 2: Yes.
+
+battle body stuff:
+
+punch - frames 7 8 9 10 are looped until the circle effect is gone. If clicked, proceeds to punch O. if not, proceed to punch X.
+
+death frames 6 7 8 are looped for three or four times for maximum effect.
