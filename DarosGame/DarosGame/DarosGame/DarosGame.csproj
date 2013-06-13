@@ -63,6 +63,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="fNbt">
+      <HintPath>..\..\..\Include\fNbt.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <Private>False</Private>
     </Reference>
@@ -111,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls.cs" />
+    <Compile Include="Convo.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="ItemFlags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
