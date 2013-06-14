@@ -12,3 +12,9 @@ Item - frames 7 8 9 10 are looped twice to show rummaging through the pocket.
 Item D frames 3 4 5 6 are looped thrice for drinking the drink.
 
 Item F frames 4 5 6 7 are looped thrice for chewing the food.
+
+
+Textbox positioning:
+Top left: Box pos + Point(205, 42)
+Width: 564
+Height: 5 lines of 04b03, 18pt
