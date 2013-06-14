@@ -74,6 +74,7 @@ namespace DarosGame {
             whitePixel.SetData<Color>(new Color[] { Color.White });
 
             PostProcessing.Res(Content);
+            Convo.Conversation.LoadRes(Content);
 
             // TODO: use this.Content to load your game content here
         }
