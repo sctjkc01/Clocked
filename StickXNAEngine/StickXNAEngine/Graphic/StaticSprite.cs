@@ -41,7 +41,7 @@ namespace StickXNAEngine.Graphic {
         }
 
         public override void Draw(SpriteBatch sb, Point loc, Vector2 scale) {
-            sb.Draw(tex, new Rectangle(loc.X - (int)(origin.X * scale.X), loc.Y - (int)(origin.Y * scale.Y), (int)(src.Width * scale.X), (int)(src.Height * scale.Y)), src, this.Tint); 
+            sb.Draw(tex, new Rectangle(loc.X - (int)(origin.X * scale.X), loc.Y - (int)(origin.Y * scale.Y), (int)(src.Width * scale.X), (int)(src.Height * scale.Y)), src, Tint, 0f, Vector2.Zero, Mirror, 0f); 
         }
     }
 }

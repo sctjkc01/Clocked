@@ -847,13 +847,10 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Talking\Talk Box with nametag D.png">
-      <Name>Talk Box with nametag D</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Talking\Talk Box with nametag U.png">
-      <Name>Talk Box with nametag U</Name>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Talking\Talk Nameplate.png">
+      <Name>Talk Nameplate</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

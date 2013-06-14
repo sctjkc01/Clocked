@@ -8,14 +8,21 @@ using Microsoft.Xna.Framework;
 namespace StickXNAEngine.Graphic {
     public abstract class Sprite {
         Color tint;
+        SpriteEffects effect;
 
         public Color Tint {
             get { return tint; }
             set { tint = value; }
         }
 
+        public virtual SpriteEffects Mirror {
+            get { return effect; }
+            set { effect = value; }
+        }
+
         public Sprite() {
             tint = Color.White;
+            effect = SpriteEffects.None;
         }
 
         public void Draw(SpriteBatch sb, Point loc) {

@@ -17,6 +17,18 @@ namespace StickXNAEngine.Graphic {
             states = new List<StaticSprite>();
         }
 
+        public override SpriteEffects Mirror {
+            get {
+                return base.Mirror;
+            }
+            set {
+                base.Mirror = value;
+                foreach(StaticSprite sprite in states) {
+                    sprite.Mirror = value;
+                }
+            }
+        }
+
         public void Add(StaticSprite sprite) {
             states.Add(sprite);
         }
