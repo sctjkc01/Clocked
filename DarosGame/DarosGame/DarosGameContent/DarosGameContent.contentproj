@@ -774,6 +774,90 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Idle 1.png">
+      <Name>Talk Portrait - Protag - Arms - Idle 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Idle 2.png">
+      <Name>Talk Portrait - Protag - Arms - Idle 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Idle 3.png">
+      <Name>Talk Portrait - Protag - Arms - Idle 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Idle 4.png">
+      <Name>Talk Portrait - Protag - Arms - Idle 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Talk Happy 1.png">
+      <Name>Talk Portrait - Protag - Arms - Talk Happy 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Talk Happy 2.png">
+      <Name>Talk Portrait - Protag - Arms - Talk Happy 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Talk Happy 3.png">
+      <Name>Talk Portrait - Protag - Arms - Talk Happy 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Talk Happy 4.png">
+      <Name>Talk Portrait - Protag - Arms - Talk Happy 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Talk Happy 5.png">
+      <Name>Talk Portrait - Protag - Arms - Talk Happy 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Talk Happy 6.png">
+      <Name>Talk Portrait - Protag - Arms - Talk Happy 6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Talk Happy 7.png">
+      <Name>Talk Portrait - Protag - Arms - Talk Happy 7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Protag - Arms\Talk Portrait - Protag - Arms - Talk Happy 8.png">
+      <Name>Talk Portrait - Protag - Arms - Talk Happy 8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Talking\Talk Box D.png">
+      <Name>Talk Box D</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Talk Box U.png">
+      <Name>Talk Box U</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Talk Box with nametag D.png">
+      <Name>Talk Box with nametag D</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\Talk Box with nametag U.png">
+      <Name>Talk Box with nametag U</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
