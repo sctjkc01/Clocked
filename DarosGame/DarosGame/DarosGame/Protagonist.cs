@@ -21,7 +21,7 @@ namespace DarosGame {
         public override void Update(GameTime gt) {
             ctrls.Update(gt);
 
-            if(Convo.Conversation.curr == null) {
+            if(Convo.Conversation.curr == null) { // <noconv>
                 Direction dir = ctrls.Movement;
                 if(dir != Direction.DENNIS) {
                     facing = dir;
@@ -119,6 +119,20 @@ namespace DarosGame {
                         }
                     }
                 }
+                // </noconv>
+            } else { // <conv>
+                Convo.Blurb curr = Convo.Conversation.curr;
+                if(ctrls.ConvoNext) {
+                    if(!curr.ShowingAll) {
+                        curr.ShowAll();
+                    } else {
+                        Convo.Conversation.curr = curr.Next;
+                    }
+                }
+                if(curr is Convo.BranchingBlurb) {
+
+                }
+                // </conv>
             }
         }
 

@@ -21,12 +21,14 @@ namespace DarosGame {
             keys[Keys.S] = new KeyboardKey(Keys.S);
             keys[Keys.D] = new KeyboardKey(Keys.D);
             keys[EZTweakVars.InteractKey] = new KeyboardKey(EZTweakVars.InteractKey);
+            keys[Keys.Space] = new KeyboardKey(Keys.Space);
 
             btns[Buttons.LeftThumbstickUp] = new GamePadButton(Buttons.LeftThumbstickUp);
             btns[Buttons.LeftThumbstickLeft] = new GamePadButton(Buttons.LeftThumbstickLeft);
             btns[Buttons.LeftThumbstickRight] = new GamePadButton(Buttons.LeftThumbstickRight);
             btns[Buttons.LeftThumbstickDown] = new GamePadButton(Buttons.LeftThumbstickDown);
             btns[Buttons.B] = new GamePadButton(Buttons.B);
+            btns[Buttons.A] = new GamePadButton(Buttons.A);
         }
 
         public void Update(GameTime gt) {
@@ -87,6 +89,10 @@ namespace DarosGame {
                     return Direction.DENNIS;
                 }
             }
+        }
+
+        public Boolean ConvoNext {
+            get { return keys[Keys.Space].JustPressed || btns[Buttons.A].JustPressed; }
         }
     }
 }

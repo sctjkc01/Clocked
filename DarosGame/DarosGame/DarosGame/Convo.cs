@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StickXNAEngine.Graphic;
 using StickXNAEngine.Utility;
@@ -9,13 +10,15 @@ using StickXNAEngine.Utility;
 namespace DarosGame {
     namespace Convo {
         public static class Conversation {
-            public static Blurb curr;
+            public static Blurb curr = null;
 
             public static void Draw(SpriteBatch sb) {
                 curr.Draw(sb);
             }
 
             public static Dictionary<string, Sprite> ports = new Dictionary<string, Sprite>();
+            public static Dictionary<uint, Blurb> blurbs = new Dictionary<uint, Blurb>();
+            public static StaticSprite top, bottom, nameplate;
 
             public static void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
 
@@ -78,6 +81,10 @@ namespace DarosGame {
                     atemp.Add(stemp);
                 }
                 ports["mantis"] = atemp;
+
+                top = new StaticSprite(cm.Load<Texture2D>("Talking/Talk Box U"));
+                bottom = new StaticSprite(cm.Load<Texture2D>("Talking/Talk Box D"));
+                nameplate = new StaticSprite(cm.Load<Texture2D>("Talking/Talk Nameplate"));
             }
         }
 
@@ -98,27 +105,87 @@ namespace DarosGame {
             /// Is the message on the top or the bottom?
             /// </summary>
             protected bool top = false;
+            /// <summary>
+            /// Should the message be shown all at once, immediately?
+            /// </summary>
+            protected bool showAll = false;
 
             private string show;
             private TimeSpan timer = new TimeSpan(0);
 
+            /// <summary>
+            /// Show the nameplate if speaker has a name (not null, not empty), and the player has the ADA.
+            /// </summary>
+            private Boolean ShowNameplate {
+                get { return name != null && name != "" && StaticVars.HaveADA; }
+            }
+
+            public Boolean ShowingAll {
+                get { return show.Length == message.Length; }
+            }
+
+            public Blurb Next {
+                get;
+            }
+
             public Blurb() {
                 PostProcessing.Add((IUpdating)this);
+                if(showAll) ShowAll();
             }
 
-            public void Draw(SpriteBatch sb) {
+            public virtual void Draw(SpriteBatch sb) {
+                Vector2 pos = DrawBack(sb);
 
+                List<String> words = show.Split(' ').ToList<String>();
+                float space = Resources.font.MeasureString(" ").X;
+                foreach(String word in words) {
+                    pos.X += Resources.font.MeasureString(word).X;
+                    if(pos.X > 770) {
+                        pos.X = 205;
+                        pos.Y += Resources.font.LineSpacing;
+                    }
+                    sb.DrawString(Resources.font, word, pos, Color.White);
+                    pos.X += space;
+                }
             }
 
-            public void Update(Microsoft.Xna.Framework.GameTime gt) {
-                timer += gt.ElapsedGameTime;
-                if(timer > EZTweakVars.CharDelay) {
-                    timer -= EZTweakVars.CharDelay;
+            protected Vector2 DrawBack(SpriteBatch sb) {
+                Vector2 pos = new Vector2(-4, 0);
+                if(top) {
+                    Conversation.top.Draw(sb, new Point(-4, 0));
+                    Conversation.ports[img].Draw(sb, new Point(19, 43));
 
-                    if(show.Length != message.Length) {
+                    if(ShowNameplate) {
+                        Conversation.nameplate.Mirror = SpriteEffects.None;
+                        Conversation.nameplate.Draw(sb, new Point(0, 191));
+                        sb.DrawString(Resources.font, name, new Vector2(33, 202), Color.White);
+                    }
+                } else {
+                    Conversation.bottom.Draw(sb, new Point(-4, 303));
+                    Conversation.ports[img].Draw(sb, new Point(19, 346));
+                    pos += new Vector2(0, 303);
+
+                    if(ShowNameplate) {
+                        Conversation.nameplate.Mirror = SpriteEffects.FlipVertically;
+                        Conversation.nameplate.Draw(sb, new Point(0, 265));
+                        sb.DrawString(Resources.font, name, new Vector2(33, 276), Color.White);
+                    }
+                }
+                return pos + new Vector2(205, 42);
+            }
+
+            public void Update(GameTime gt) {
+                if(show.Length != message.Length) {
+                    timer += gt.ElapsedGameTime;
+                    if(timer > EZTweakVars.CharDelay) {
+                        timer -= EZTweakVars.CharDelay;
                         show += message.ElementAt<char>(show.Length);
                     }
                 }
+            }
+
+            public void ShowAll() {
+                show = message;
             }
         }
 
@@ -127,6 +194,10 @@ namespace DarosGame {
 
             public LinearBlurb() {
                 PostProcessing.Add((INeedMoreInit)this);
+            }
+
+            public Blurb Next {
+                get { return next; }
             }
 
             public void FinalizeInit();

@@ -16,5 +16,5 @@ Item F frames 4 5 6 7 are looped thrice for chewing the food.
 
 Textbox positioning:
 Top left: Box pos + Point(205, 42)
-Width: 564
+Text: 205 -> 770
 Height: 5 lines of 04b03, 18pt
