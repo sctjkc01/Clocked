@@ -19,9 +19,9 @@ namespace DarosGame {
         }
 
         public override void Update(GameTime gt) {
-            if(Convo.Conversation.curr == null) {
-                ctrls.Update(gt);
+            ctrls.Update(gt);
 
+            if(Convo.Conversation.curr == null) {
                 Direction dir = ctrls.Movement;
                 if(dir != Direction.DENNIS) {
                     facing = dir;
