@@ -19,100 +19,102 @@ namespace DarosGame {
         }
 
         public override void Update(GameTime gt) {
-            ctrls.Update(gt);
+            if(Convo.Conversation.curr == null) {
+                ctrls.Update(gt);
 
-            Direction dir = ctrls.Movement;
-            if(dir != Direction.DENNIS) {
-                facing = dir;
-                walking = true;
-            } else {
-                walking = false;
-            }
-
-            if(walking) {
-                int speed = 3;
-                Boolean n = false, s = false, e = false, w = false;
-                if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
-                    location.Y -= speed;
-                    n = true;
-                }
-                if(facing == Direction.SOUTH || facing == Direction.SOUTHEAST || facing == Direction.SOUTHWEST) {
-                    location.Y += speed;
-                    s = true;
+                Direction dir = ctrls.Movement;
+                if(dir != Direction.DENNIS) {
+                    facing = dir;
+                    walking = true;
+                } else {
+                    walking = false;
                 }
 
-                if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
-                    location.X -= speed;
-                    w = true;
-                }
-                if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
-                    location.X += speed;
-                    e = true;
-                }
-
-                //Check collisions with walls.  If we're colliding, Undo!
-                bool colliding = StaticVars.CurrRoom.CollidingWithWall(this);
-                if(colliding) {
-                    if(colliding && n) {
-                        location.Y += speed;
-                    }
-                    if(colliding && s) {
+                if(walking) {
+                    int speed = 3;
+                    Boolean n = false, s = false, e = false, w = false;
+                    if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
                         location.Y -= speed;
+                        n = true;
                     }
-                    colliding = StaticVars.CurrRoom.CollidingWithWall(this);
-                    if(colliding && n) {
-                        location.Y -= speed;
-                    }
-                    if(colliding && s) {
+                    if(facing == Direction.SOUTH || facing == Direction.SOUTHEAST || facing == Direction.SOUTHWEST) {
                         location.Y += speed;
+                        s = true;
                     }
-                    if(colliding && e) {
+
+                    if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
                         location.X -= speed;
+                        w = true;
                     }
-                    if(colliding && w) {
+                    if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
                         location.X += speed;
+                        e = true;
                     }
-                    colliding = StaticVars.CurrRoom.CollidingWithWall(this);
-                    if(colliding && n) {
-                        location.Y += speed;
+
+                    //Check collisions with walls.  If we're colliding, Undo!
+                    bool colliding = StaticVars.CurrRoom.CollidingWithWall(this);
+                    if(colliding) {
+                        if(colliding && n) {
+                            location.Y += speed;
+                        }
+                        if(colliding && s) {
+                            location.Y -= speed;
+                        }
+                        colliding = StaticVars.CurrRoom.CollidingWithWall(this);
+                        if(colliding && n) {
+                            location.Y -= speed;
+                        }
+                        if(colliding && s) {
+                            location.Y += speed;
+                        }
+                        if(colliding && e) {
+                            location.X -= speed;
+                        }
+                        if(colliding && w) {
+                            location.X += speed;
+                        }
+                        colliding = StaticVars.CurrRoom.CollidingWithWall(this);
+                        if(colliding && n) {
+                            location.Y += speed;
+                        }
+                        if(colliding && s) {
+                            location.Y -= speed;
+                        }
                     }
-                    if(colliding && s) {
-                        location.Y -= speed;
+                }
+                Pair<Room, Point> exit = StaticVars.CurrRoom.Exit(this);
+                if(exit != null) {
+                    StaticVars.Exit = exit;
+                }
+
+                foreach(Direction alpha in walk.Keys) {
+                    ((AnimateSprite)walk[alpha]).Update(gt);
+                }
+
+                if(ctrls.Interact) {
+                    Rectangle range = this.CollisionBox;
+                    if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
+                        range.Y -= EZTweakVars.PlayerInteractRange;
+                        range.Height += EZTweakVars.PlayerInteractRange;
                     }
-                }
-            }
-            Pair<Room, Point> exit = StaticVars.CurrRoom.Exit(this);
-            if(exit != null) {
-                StaticVars.Exit = exit;
-            }
+                    if(facing == Direction.SOUTH || facing == Direction.SOUTHEAST || facing == Direction.SOUTHWEST) {
+                        range.Height += EZTweakVars.PlayerInteractRange;
+                    }
 
-            foreach(Direction alpha in walk.Keys) {
-                ((AnimateSprite)walk[alpha]).Update(gt);
-            }
+                    if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
+                        range.X -= EZTweakVars.PlayerInteractRange;
+                        range.Width += EZTweakVars.PlayerInteractRange;
+                    }
+                    if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
+                        range.Width += EZTweakVars.PlayerInteractRange;
+                    }
 
-            if(ctrls.Interact) {
-                Rectangle range = this.CollisionBox;
-                if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
-                    range.Y -= EZTweakVars.PlayerInteractRange;
-                    range.Height += EZTweakVars.PlayerInteractRange;
-                }
-                if(facing == Direction.SOUTH || facing == Direction.SOUTHEAST || facing == Direction.SOUTHWEST) {
-                    range.Height += EZTweakVars.PlayerInteractRange;
-                }
-
-                if(facing == Direction.WEST || facing == Direction.NORTHWEST || facing == Direction.SOUTHWEST) {
-                    range.X -= EZTweakVars.PlayerInteractRange;
-                    range.Width += EZTweakVars.PlayerInteractRange;
-                }
-                if(facing == Direction.EAST || facing == Direction.NORTHEAST || facing == Direction.SOUTHEAST) {
-                    range.Width += EZTweakVars.PlayerInteractRange;
-                }
-
-                foreach(GameObject alpha in StaticVars.CurrRoom.Objects) {
-                    if(alpha is IInteractive) {
-                        if(!(alpha is ISpecificFacing) || ((ISpecificFacing)alpha).RightFacing(facing)) {
-                            if(range.Contains(alpha.Loc)) {
-                                ((IInteractive)alpha).Interact();
+                    foreach(GameObject alpha in StaticVars.CurrRoom.Objects) {
+                        if(alpha is IInteractive) {
+                            if(!(alpha is ISpecificFacing) || ((ISpecificFacing)alpha).RightFacing(facing)) {
+                                if(range.Contains(alpha.Loc)) {
+                                    ((IInteractive)alpha).Interact();
+                                }
                             }
                         }
                     }

@@ -13,7 +13,7 @@ namespace DarosGame {
 
         public static Pair<Room, Point> Exit = null;
 
-        public static bool HaveMenu = false;
+        public static bool HaveADA = false;
     }
 
     public static class EZTweakVars {
