@@ -12,8 +12,16 @@ namespace DarosGame {
         public static class Conversation {
             public static Blurb curr = null;
 
+            public static uint nextId = 0;
+
             public static void Draw(SpriteBatch sb) {
                 curr.Draw(sb);
+            }
+
+            public static uint RegisterBlurb(Blurb alpha) {
+                blurbs[nextId] = alpha;
+                nextId++;
+                return nextId - 1;
             }
 
             public static Dictionary<string, Sprite> ports = new Dictionary<string, Sprite>();
@@ -110,7 +118,7 @@ namespace DarosGame {
             /// </summary>
             protected bool showAll = false;
 
-            private string show;
+            private string show = "";
             private TimeSpan timer = new TimeSpan(0);
 
             /// <summary>
@@ -123,6 +131,12 @@ namespace DarosGame {
             public Boolean ShowingAll {
                 get { return show.Length == message.Length; }
             }
+
+            private String Image { set { img = value; } }
+            private String Name { set { name = value; } }
+            private String Message { set { message = value; } }
+            private Boolean IsTop { set { top = value; } }
+            private Boolean DisplayAll { set { showAll = value; } }
 
             public abstract Blurb Next {
                 get;
@@ -175,7 +189,10 @@ namespace DarosGame {
             }
 
             public void Update(GameTime gt) {
-                if(show.Length != message.Length) {
+                if(Conversation.curr != this && !showAll) {
+                    show = "";
+                }
+                if(Conversation.curr == this && show.Length != message.Length) {
                     timer += gt.ElapsedGameTime;
                     if(timer > EZTweakVars.CharDelay) {
                         timer -= EZTweakVars.CharDelay;
@@ -190,7 +207,7 @@ namespace DarosGame {
         }
 
         public abstract class LinearBlurb : Blurb, INeedMoreInit {
-            protected Blurb next;
+            protected Blurb next = null;
 
             public LinearBlurb() {
                 PostProcessing.Add((INeedMoreInit)this);
@@ -201,6 +218,31 @@ namespace DarosGame {
             }
 
             public abstract void FinalizeInit();
+        }
+
+        public class SimpleBlurb : LinearBlurb {
+            uint nextid = 0;
+
+            public SimpleBlurb(string msg) : this("", msg, null, false, false, 0) { }
+
+            public SimpleBlurb(string img, string msg, string name) : this(img, msg, name, false, false, 0) { }
+
+            public SimpleBlurb(string img, string msg, string name, bool top, bool showall) : this(img, msg, name, top, showall, 0) { }
+
+            public SimpleBlurb(string img, string msg, string name, bool top, bool showall, uint nextid) {
+                this.img = img;
+                this.message = msg;
+                this.name = name;
+                this.top = top;
+                this.showAll = showall;
+                this.nextid = nextid;
+            }
+
+            public override void FinalizeInit() {
+                if(nextid != 0) {
+                    next = Conversation.blurbs[nextid];
+                }
+            }
         }
 
         public abstract class BranchingBlurb : Blurb, INeedMoreInit {
