@@ -855,6 +855,108 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Flat Lizard - Idle 1.png">
+      <Name>Talk Portrait - NPC - Flat Lizard - Idle 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Flat Lizard - Idle 2.png">
+      <Name>Talk Portrait - NPC - Flat Lizard - Idle 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Flat Lizard - Idle 3.png">
+      <Name>Talk Portrait - NPC - Flat Lizard - Idle 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Flat Lizard - Idle 4.png">
+      <Name>Talk Portrait - NPC - Flat Lizard - Idle 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Flat Lizard - Idle 5.png">
+      <Name>Talk Portrait - NPC - Flat Lizard - Idle 5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Flat Lizard - Talk 1.png">
+      <Name>Talk Portrait - NPC - Flat Lizard - Talk 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Flat Lizard - Talk 2.png">
+      <Name>Talk Portrait - NPC - Flat Lizard - Talk 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Flat Lizard - Talk 3.png">
+      <Name>Talk Portrait - NPC - Flat Lizard - Talk 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Lumisnail 1 - All 1.png">
+      <Name>Talk Portrait - NPC - Lumisnail 1 - All 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Lumisnail 1 - All 2.png">
+      <Name>Talk Portrait - NPC - Lumisnail 1 - All 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Lumisnail 1 - All 3.png">
+      <Name>Talk Portrait - NPC - Lumisnail 1 - All 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Lumisnail 1 - All 4.png">
+      <Name>Talk Portrait - NPC - Lumisnail 1 - All 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Lumisnail 2 - All 1.png">
+      <Name>Talk Portrait - NPC - Lumisnail 2 - All 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Lumisnail 2 - All 2.png">
+      <Name>Talk Portrait - NPC - Lumisnail 2 - All 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Lumisnail 2 - All 3.png">
+      <Name>Talk Portrait - NPC - Lumisnail 2 - All 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Lumisnail 2 - All 4.png">
+      <Name>Talk Portrait - NPC - Lumisnail 2 - All 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Mantis - All 1.png">
+      <Name>Talk Portrait - NPC - Mantis - All 1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Mantis - All 2.png">
+      <Name>Talk Portrait - NPC - Mantis - All 2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Mantis - All 3.png">
+      <Name>Talk Portrait - NPC - Mantis - All 3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Talking\NPCs\Tiny Animals\Talk Portrait - NPC - Mantis - All 4.png">
+      <Name>Talk Portrait - NPC - Mantis - All 4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

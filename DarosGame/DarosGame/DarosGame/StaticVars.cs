@@ -18,10 +18,10 @@ namespace DarosGame {
 
     public static class EZTweakVars {
         // Interaction Variables
-        public static const int PlayerInteractRange = 100; //Units: Pixels
-        public static const Keys InteractKey = Keys.E; //Replace letter as you will [REQUIRES RESTART]
+        public static int PlayerInteractRange = 100; //Units: Pixels
+        public static Keys InteractKey = Keys.E; //Replace letter as you will [REQUIRES RESTART]
 
         // Chat Variables
-        public static const TimeSpan CharDelay = new TimeSpan(750000); //TimeSpan: Unit 100ns = 0.0001ms
+        public static TimeSpan CharDelay = new TimeSpan(750000); //TimeSpan: Unit 100ns = 0.0001ms
     }
 }

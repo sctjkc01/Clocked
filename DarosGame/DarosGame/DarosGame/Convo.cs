@@ -124,7 +124,7 @@ namespace DarosGame {
                 get { return show.Length == message.Length; }
             }
 
-            public Blurb Next {
+            public abstract Blurb Next {
                 get;
             }
 
@@ -153,7 +153,7 @@ namespace DarosGame {
                 Vector2 pos = new Vector2(-4, 0);
                 if(top) {
                     Conversation.top.Draw(sb, new Point(-4, 0));
-                    Conversation.ports[img].Draw(sb, new Point(19, 43));
+                    try { Conversation.ports[img].Draw(sb, new Point(19, 43)); } catch(KeyNotFoundException) { }
 
                     if(ShowNameplate) {
                         Conversation.nameplate.Mirror = SpriteEffects.None;
@@ -162,7 +162,7 @@ namespace DarosGame {
                     }
                 } else {
                     Conversation.bottom.Draw(sb, new Point(-4, 303));
-                    Conversation.ports[img].Draw(sb, new Point(19, 346));
+                    try { Conversation.ports[img].Draw(sb, new Point(19, 346)); } catch(KeyNotFoundException) { }
                     pos += new Vector2(0, 303);
 
                     if(ShowNameplate) {
@@ -196,11 +196,11 @@ namespace DarosGame {
                 PostProcessing.Add((INeedMoreInit)this);
             }
 
-            public Blurb Next {
+            public override Blurb Next {
                 get { return next; }
             }
 
-            public void FinalizeInit();
+            public abstract void FinalizeInit();
         }
 
         public abstract class BranchingBlurb : Blurb, INeedMoreInit {
@@ -210,7 +210,11 @@ namespace DarosGame {
                 PostProcessing.Add((INeedMoreInit)this);
             }
 
-            public void FinalizeInit();
+            public override Blurb Next {
+                get { throw new NotImplementedException(); }
+            }
+
+            public abstract void FinalizeInit();
         }
     }
 }

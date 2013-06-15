@@ -24,7 +24,7 @@ namespace DarosGame {
             }
 
             public void Interact() {
-                Console.WriteLine("Sign interacted with!"); // Test Code
+                
             }
 
             public bool RightFacing(Direction dir) {
