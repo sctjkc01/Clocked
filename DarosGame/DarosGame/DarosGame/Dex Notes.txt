@@ -13,6 +13,9 @@ Item D frames 3 4 5 6 are looped thrice for drinking the drink.
 
 Item F frames 4 5 6 7 are looped thrice for chewing the food.
 
+Theres a tiny mistake in the example of the Item T example gif. The back arm isn't supposed to jiggle like that.
+
+Weak Enemy animation is frame 1 2 3 then 4 5 6 three times then 3 2 1 back to idle.
 
 Textbox positioning:
 Top left: Box pos + Point(205, 42)

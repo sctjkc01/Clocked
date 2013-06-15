@@ -108,26 +108,26 @@ namespace DarosGame {
                 timer += gameTime.ElapsedGameTime;
                 if(timer > fade) {
                     timer -= fade;
-                    if(opacity + 10 > 255) {
+                    if(opacity + 15 > 255) {
                         opacity = 255;
                         StaticVars.CurrRoom = StaticVars.Exit.Item1;
                         p.Loc = StaticVars.Exit.Item2;
                         timer = new TimeSpan(0);
                         currState = GameState.FADEIN;
                     } else {
-                        opacity += 10;
+                        opacity += 15;
                     }
                 }
             } else if(currState == GameState.FADEIN) {
                 timer += gameTime.ElapsedGameTime;
                 if(timer > fade) {
                     timer -= fade;
-                    if(opacity - 10 < 0) {
+                    if(opacity - 15 < 0) {
                         opacity = 0;
                         StaticVars.Exit = null;
                         currState = GameState.GAME;
                     } else {
-                        opacity -= 10;
+                        opacity -= 15;
                     }
                 }
             }
