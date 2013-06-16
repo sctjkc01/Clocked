@@ -22,6 +22,6 @@ namespace DarosGame {
         public static Keys InteractKey = Keys.E; //Replace letter as you will [REQUIRES RESTART]
 
         // Chat Variables
-        public static TimeSpan CharDelay = new TimeSpan(500000); //TimeSpan: Unit 100ns = 0.0001ms [REQUIRES RESTART]
+        public static TimeSpan CharDelay = new TimeSpan(200000); //TimeSpan: Unit 100ns = 0.0001ms [REQUIRES RESTART]
     }
 }
