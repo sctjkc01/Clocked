@@ -170,6 +170,8 @@ namespace DarosGame {
                 spriteBatch.Draw(whitePixel, new Vector2(0, 0), null, new Color(0, 0, 0, opacity), 0f, Vector2.Zero, new Vector2(800, 600), SpriteEffects.None, 0);
             }
 
+            Convo.Conversation.Draw(spriteBatch);
+
             spriteBatch.End();
 
             base.Draw(gameTime);

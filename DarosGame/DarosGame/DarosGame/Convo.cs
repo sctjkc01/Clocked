@@ -15,7 +15,9 @@ namespace DarosGame {
             public static uint nextId = 0;
 
             public static void Draw(SpriteBatch sb) {
-                curr.Draw(sb);
+                if(curr != null) {
+                    curr.Draw(sb);
+                }
             }
 
             public static uint RegisterBlurb(Blurb alpha) {
@@ -158,7 +160,7 @@ namespace DarosGame {
                         pos.X = 205;
                         pos.Y += Resources.font.LineSpacing;
                     }
-                    sb.DrawString(Resources.font, word, pos, Color.White);
+                    sb.DrawString(Resources.font, word, pos - new Vector2(Resources.font.MeasureString(word).X, 0), Color.White);
                     pos.X += space;
                 }
             }
@@ -175,14 +177,14 @@ namespace DarosGame {
                         sb.DrawString(Resources.font, name, new Vector2(33, 202), Color.White);
                     }
                 } else {
-                    Conversation.bottom.Draw(sb, new Point(-4, 303));
-                    try { Conversation.ports[img].Draw(sb, new Point(19, 346)); } catch(KeyNotFoundException) { }
-                    pos += new Vector2(0, 303);
+                    Conversation.bottom.Draw(sb, new Point(-4, 403));
+                    try { Conversation.ports[img].Draw(sb, new Point(19, 446)); } catch(KeyNotFoundException) { }
+                    pos += new Vector2(0, 403);
 
                     if(ShowNameplate) {
                         Conversation.nameplate.Mirror = SpriteEffects.FlipVertically;
-                        Conversation.nameplate.Draw(sb, new Point(0, 265));
-                        sb.DrawString(Resources.font, name, new Vector2(33, 276), Color.White);
+                        Conversation.nameplate.Draw(sb, new Point(0, 365));
+                        sb.DrawString(Resources.font, name, new Vector2(33, 376), Color.White);
                     }
                 }
                 return pos + new Vector2(205, 42);
