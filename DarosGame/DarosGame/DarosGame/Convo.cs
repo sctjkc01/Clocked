@@ -157,11 +157,13 @@ namespace DarosGame {
                 foreach(String word in words) {
                     pos.X += Resources.font.MeasureString(word).X;
                     if(pos.X > 770) {
-                        pos.X = 205;
+                        pos.X = 205 + Resources.font.MeasureString(word).X + space;
                         pos.Y += Resources.font.LineSpacing;
+                        sb.DrawString(Resources.font, word, new Vector2(205, pos.Y), Color.White);
+                    } else {
+                        sb.DrawString(Resources.font, word, new Vector2(Math.Max(pos.X - Resources.font.MeasureString(word).X, 205), pos.Y), Color.White);
+                        pos.X += space;
                     }
-                    sb.DrawString(Resources.font, word, pos - new Vector2(Resources.font.MeasureString(word).X, 0), Color.White);
-                    pos.X += space;
                 }
             }
 
