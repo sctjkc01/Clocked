@@ -262,5 +262,14 @@ namespace DarosGame {
 
             public abstract void FinalizeInit();
         }
+
+        public abstract class MethodBlurb : LinearBlurb {
+
+            public Delegate method;
+
+            public override void FinalizeInit() {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

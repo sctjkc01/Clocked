@@ -126,6 +126,9 @@ namespace DarosGame {
                     if(!curr.ShowingAll) {
                         curr.ShowAll();
                     } else {
+                        if(curr is Convo.MethodBlurb && ((Convo.MethodBlurb)curr).method != null) {
+                            ((Convo.MethodBlurb)curr).method.DynamicInvoke();
+                        }
                         Convo.Conversation.curr = curr.Next;
                     }
                 }
