@@ -37,7 +37,8 @@ namespace StickXNAEngine.Utility {
         }
 
         public static void Update(GameTime gt) {
-            foreach(IUpdating alpha in updating) {
+            List<IUpdating> temp = new List<IUpdating>(updating);
+            foreach(IUpdating alpha in temp) {
                 alpha.Update(gt);
             }
         }
