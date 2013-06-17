@@ -8,9 +8,6 @@ using StickXNAEngine.Utility;
 namespace DarosGame {
     namespace SceneryGameObjects {
         public class Sign : SimpleGameObject, IConversable, ISpecificFacing {
-            private Convo.SimpleBlurb conv = new Convo.SimpleBlurb("This is a sign. Have me have to tell you that is pretty redundant.");
-
-
             public Sign(Point loc) {
                 location = loc;
                 width = 50;
@@ -26,7 +23,8 @@ namespace DarosGame {
             }
 
             public void Interact() {
-                Convo.Conversation.curr = conv;
+                Convo.Conversation.curr = new Convo.VolatileBlurb("This is a sign.  Having me have to tell you that is pretty redundant.");
+                Convo.Conversation.curr.Next = new Convo.VolatileBlurb("Then again, this is testing, after all.  What're you gonna do about it?");
             }
 
             public bool RightFacing(Direction dir) {

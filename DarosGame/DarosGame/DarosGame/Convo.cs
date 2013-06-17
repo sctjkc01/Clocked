@@ -142,6 +142,7 @@ namespace DarosGame {
 
             public abstract Blurb Next {
                 get;
+                set;
             }
 
             public Blurb() {
@@ -192,7 +193,7 @@ namespace DarosGame {
                 return pos + new Vector2(205, 42);
             }
 
-            public void Update(GameTime gt) {
+            public virtual void Update(GameTime gt) {
                 if(Conversation.curr != this && !showAll) {
                     show = "";
                 }
@@ -219,6 +220,7 @@ namespace DarosGame {
 
             public override Blurb Next {
                 get { return next; }
+                set { next = value; }
             }
 
             public abstract void FinalizeInit();
@@ -249,6 +251,24 @@ namespace DarosGame {
             }
         }
 
+        public class VolatileBlurb : SimpleBlurb {
+            public VolatileBlurb(string msg) : base(msg) { }
+            public VolatileBlurb(string img, string msg, string name) : base(img, msg, name) { }
+            public VolatileBlurb(string img, string msg, string name, bool top, bool showall) : base(img, msg, name, top, showall) { }
+            public VolatileBlurb(string img, string msg, string name, bool top, bool showall, Blurb next)
+                : base(img, msg, name, top, showall) {
+                    this.next = next;
+            }
+
+            public override void Update(GameTime gt) {
+                if(ShowingAll && Conversation.curr != this) {
+                    PostProcessing.updating.Remove(this);
+                } else {
+                    base.Update(gt);
+                }
+            }
+        }
+
         public abstract class BranchingBlurb : Blurb, INeedMoreInit {
             protected Dictionary<string, Blurb> choice = new Dictionary<string,Blurb>();
 
@@ -258,6 +278,7 @@ namespace DarosGame {
 
             public override Blurb Next {
                 get { throw new NotImplementedException(); }
+                set { throw new NotImplementedException(); }
             }
 
             public abstract void FinalizeInit();
