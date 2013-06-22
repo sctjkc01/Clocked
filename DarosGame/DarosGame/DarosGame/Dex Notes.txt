@@ -22,3 +22,7 @@ Textbox positioning:
 Top left: Box pos + Point(205, 42)
 Text: 205 -> 770
 Height: 5 lines of 04b03, 18pt
+
+Continue Indicator: 
+Origins: Out 7,18 & In 7,15.  
+Placement: Point(746, top?165:568)
