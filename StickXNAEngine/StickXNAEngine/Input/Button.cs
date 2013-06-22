@@ -5,6 +5,7 @@ using System.Text;
 using StickXNAEngine.Graphic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace StickXNAEngine.Input {
     public class Button {
@@ -151,14 +152,23 @@ namespace StickXNAEngine.Input {
                     mclick = false;
                 }
             }
+            if(press is AnimateSprite) ((AnimateSprite)press).Update(gt);
+            if(hover is AnimateSprite) ((AnimateSprite)hover).Update(gt);
+            if(idle is AnimateSprite) ((AnimateSprite)idle).Update(gt);
         }
 
 #endif
+
+        public void Draw(SpriteBatch sb) {
+            if(mhover) {
+                if(mclick) {
+                    press.Draw(sb, new Point(area.X, area.Y));
+                } else {
+                    hover.Draw(sb, new Point(area.X, area.Y));
+                }
+            } else {
+                idle.Draw(sb, new Point(area.X, area.Y));
+            }
+        }
     }
 }
-
-#if XBOX
-
-// Placeholder for XBOX code for buttons
-
-#endif
