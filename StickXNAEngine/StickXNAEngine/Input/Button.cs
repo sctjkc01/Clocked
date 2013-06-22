@@ -160,14 +160,16 @@ namespace StickXNAEngine.Input {
 #endif
 
         public void Draw(SpriteBatch sb) {
-            if(mhover) {
-                if(mclick) {
-                    press.Draw(sb, new Point(area.X, area.Y));
+            if(visible) {
+                if(mhover) {
+                    if(mclick) {
+                        press.Draw(sb, new Point(area.X, area.Y));
+                    } else {
+                        hover.Draw(sb, new Point(area.X, area.Y));
+                    }
                 } else {
-                    hover.Draw(sb, new Point(area.X, area.Y));
+                    idle.Draw(sb, new Point(area.X, area.Y));
                 }
-            } else {
-                idle.Draw(sb, new Point(area.X, area.Y));
             }
         }
     }
