@@ -96,10 +96,10 @@ namespace StickXNAEngine.Input {
             get { return mclick; }
             set {
                 if(!mclick && value) {
-                    if(omd != null) omd();
+                    if(active && omd != null) omd();
                 }
                 if(mclick && !value) {
-                    if(omu != null) omu();
+                    if(active && omu != null) omu();
                 }
                 mclick = value;
             }
@@ -132,9 +132,9 @@ namespace StickXNAEngine.Input {
                     mhover = true;
                     if(!mclick) {
                         mclick = true;
-                        if(omd != null) omd();
+                        if(active && omd != null) omd();
                     } else {
-                        if(held != null) held();
+                        if(active && held != null) held();
                     }
                 } else {
                     mhover = false;
@@ -145,7 +145,7 @@ namespace StickXNAEngine.Input {
                     mhover = true;
                     if(mclick) {
                         mclick = false;
-                        if(omu != null) omu();
+                        if(active && omu != null) omu();
                     }
                 } else {
                     mhover = false;
