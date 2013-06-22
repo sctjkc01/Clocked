@@ -20,6 +20,7 @@ namespace DarosGame {
             keys[Keys.A] = new KeyboardKey(Keys.A);
             keys[Keys.S] = new KeyboardKey(Keys.S);
             keys[Keys.D] = new KeyboardKey(Keys.D);
+            keys[Keys.R] = new KeyboardKey(Keys.R);
             keys[EZTweakVars.InteractKey] = new KeyboardKey(EZTweakVars.InteractKey);
             keys[Keys.Space] = new KeyboardKey(Keys.Space);
 
@@ -27,6 +28,7 @@ namespace DarosGame {
             btns[Buttons.LeftThumbstickLeft] = new GamePadButton(Buttons.LeftThumbstickLeft);
             btns[Buttons.LeftThumbstickRight] = new GamePadButton(Buttons.LeftThumbstickRight);
             btns[Buttons.LeftThumbstickDown] = new GamePadButton(Buttons.LeftThumbstickDown);
+            btns[Buttons.Y] = new GamePadButton(Buttons.Y);
             btns[Buttons.B] = new GamePadButton(Buttons.B);
             btns[Buttons.A] = new GamePadButton(Buttons.A);
         }
