@@ -12,7 +12,7 @@ namespace StickXNAEngine.Input {
         public delegate void MouseEvent();
 
         private Sprite idle, hover, press;
-        private bool visible, active;
+        private bool visible = true, active = true;
         private MouseEvent omd, held, omu;
         private bool mhover = false, mclick = false;
         private Rectangle area;
