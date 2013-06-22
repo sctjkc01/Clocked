@@ -63,6 +63,10 @@ namespace DarosGame {
             get { return keys[Keys.D].IsPressed || btns[Buttons.LeftThumbstickRight].IsPressed; }
         }
 
+        private Boolean PressingADA {
+            get { return keys[Keys.R].IsPressed || btns[Buttons.Y].IsPressed; }
+        }
+
         public Boolean Interact {
             get { return keys[EZTweakVars.InteractKey].JustPressed || btns[Buttons.B].JustPressed; }
         }
