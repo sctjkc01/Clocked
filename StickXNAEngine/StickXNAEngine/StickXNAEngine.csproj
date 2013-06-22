@@ -96,7 +96,6 @@
     <Compile Include="Graphic\StaticSprite.cs" />
     <Compile Include="Input\Keyboard.cs" />
     <Compile Include="Input\Menu.cs" />
-    <Compile Include="Input\MenuItem.cs" />
     <Compile Include="Input\Textbox.cs" />
     <Compile Include="Input\Button.cs" />
     <Compile Include="Input\GamePadButton.cs" />
