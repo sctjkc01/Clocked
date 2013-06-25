@@ -11,6 +11,7 @@ namespace DarosGame {
         public static Dictionary<string, SpriteFont> fonts = new Dictionary<string, SpriteFont>();
 
         public static Dictionary<string, Song> songs = new Dictionary<string, Song>();
+        public static MultiPieceSong title;
 
         public static void InitResources(ContentManager cm) {
             fonts["04b03m"] = cm.Load<SpriteFont>("04b03");
@@ -25,7 +26,8 @@ namespace DarosGame {
 
             songs["handylass"] = new Song("Music/A Handy Lass");
             songs["worndown"] = new Song("Music/Worn Down Science");
-            songs["clocked"] = new Song("Music/Clocked");
+
+            title = new MultiPieceSong("Music/Clocked_woosh", "Music/Clocked");
         }
     }
 }

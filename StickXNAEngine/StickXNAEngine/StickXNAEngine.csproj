@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audio\MultiPieceSong.cs" />
     <Compile Include="Audio\Song.cs" />
     <Compile Include="Audio\Sound.cs">
       <SubType>Code</SubType>

@@ -99,7 +99,7 @@ namespace DarosGame {
             if(GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
                 this.Exit();
 
-            if(!Resources.songs["clocked"].Playing) Resources.songs["clocked"].Playing = true;
+            if(!Resources.title.Play) Resources.title.Play = true;
 
             // TODO: Add your update logic here
             if(currState == GameState.GAME) {
