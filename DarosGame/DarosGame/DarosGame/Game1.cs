@@ -76,7 +76,6 @@ namespace DarosGame {
             PostProcessing.Res(Content);
             Convo.Conversation.LoadRes(Content);
 
-            Resources.songs["clocked"].Playing = true;
             StickXNAEngine.Audio.Song.Repeat = true;
 
             // TODO: use this.Content to load your game content here
@@ -99,6 +98,8 @@ namespace DarosGame {
             // Allows the game to exit
             if(GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
                 this.Exit();
+
+            if(!Resources.songs["clocked"].Playing) Resources.songs["clocked"].Playing = true;
 
             // TODO: Add your update logic here
             if(currState == GameState.GAME) {
