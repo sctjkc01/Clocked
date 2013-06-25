@@ -7,6 +7,10 @@ using StickXNAEngine.Utility;
 using Microsoft.Xna.Framework.Input;
 
 namespace DarosGame {
+    public enum GameState {
+        MENU, GAME, FADEOUT, FADEIN
+    }
+
     public static class StaticVars {
         public static Point Camera = new Point(0, 0);
         public static Room CurrRoom = null;
@@ -14,6 +18,9 @@ namespace DarosGame {
         public static Pair<Room, Point> Exit = null;
 
         public static bool HaveADA = false;
+        public static GameState currState = GameState.GAME;
+
+        public static Protagonist player;
     }
 
     public static class EZTweakVars {
