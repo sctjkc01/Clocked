@@ -39,6 +39,7 @@ namespace StickXNAEngine.Audio {
                     } else {
                         MediaPlayer.Play(song);
                     }
+                    currsong = this;
                 } else {
                     if(currsong == this) MediaPlayer.Stop();
                 }
