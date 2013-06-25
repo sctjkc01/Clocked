@@ -1014,8 +1014,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Music\Clocked_wooooooosh.mp3">
-      <Name>Clocked_wooooooosh</Name>
+    <Compile Include="Music\Clocked_woosh.mp3">
+      <Name>Clocked_woosh</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
     </Compile>
