@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audio\Song.cs" />
     <Compile Include="Graphic\AnimateSprite.cs" />
     <Compile Include="Graphic\StaticSprite.cs" />
     <Compile Include="Input\Keyboard.cs" />

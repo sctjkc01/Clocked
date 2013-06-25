@@ -76,6 +76,9 @@ namespace DarosGame {
             PostProcessing.Res(Content);
             Convo.Conversation.LoadRes(Content);
 
+            Resources.songs["clocked"].Playing = true;
+            StickXNAEngine.Audio.Song.Repeat = true;
+
             // TODO: use this.Content to load your game content here
         }
 
