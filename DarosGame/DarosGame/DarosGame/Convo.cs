@@ -154,15 +154,15 @@ namespace DarosGame {
                 Vector2 pos = DrawBack(sb);
 
                 List<String> words = show.Split(' ').ToList<String>();
-                float space = Resources.font.MeasureString(" ").X;
+                float space = Resources.fonts["04b03m"].MeasureString(" ").X;
                 foreach(String word in words) {
-                    pos.X += Resources.font.MeasureString(word).X;
+                    pos.X += Resources.fonts["04b03m"].MeasureString(word).X;
                     if(pos.X > 770) {
-                        pos.X = 205 + Resources.font.MeasureString(word).X + space;
-                        pos.Y += Resources.font.LineSpacing;
-                        sb.DrawString(Resources.font, word, new Vector2(205, pos.Y), Color.White);
+                        pos.X = 205 + Resources.fonts["04b03m"].MeasureString(word).X + space;
+                        pos.Y += Resources.fonts["04b03m"].LineSpacing;
+                        sb.DrawString(Resources.fonts["04b03m"], word, new Vector2(205, pos.Y), Color.White);
                     } else {
-                        sb.DrawString(Resources.font, word, new Vector2(Math.Max(pos.X - Resources.font.MeasureString(word).X, 205), pos.Y), Color.White);
+                        sb.DrawString(Resources.fonts["04b03m"], word, new Vector2(Math.Max(pos.X - Resources.fonts["04b03m"].MeasureString(word).X, 205), pos.Y), Color.White);
                         pos.X += space;
                     }
                 }
@@ -177,7 +177,7 @@ namespace DarosGame {
                     if(ShowNameplate) {
                         Conversation.nameplate.Mirror = SpriteEffects.None;
                         Conversation.nameplate.Draw(sb, new Point(0, 191));
-                        sb.DrawString(Resources.font, name, new Vector2(33, 202), Color.White);
+                        sb.DrawString(Resources.fonts["04b03m"], name, new Vector2(33, 202), Color.White);
                     }
                 } else {
                     Conversation.bottom.Draw(sb, new Point(-4, 403));
@@ -187,7 +187,7 @@ namespace DarosGame {
                     if(ShowNameplate) {
                         Conversation.nameplate.Mirror = SpriteEffects.FlipVertically;
                         Conversation.nameplate.Draw(sb, new Point(0, 365));
-                        sb.DrawString(Resources.font, name, new Vector2(33, 376), Color.White);
+                        sb.DrawString(Resources.fonts["04b03m"], name, new Vector2(33, 376), Color.White);
                     }
                 }
                 return pos + new Vector2(205, 42);
