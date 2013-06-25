@@ -8,12 +8,13 @@ using Microsoft.Xna.Framework.Input;
 
 namespace DarosGame {
     public enum GameState {
-        MENU, GAME, FADEOUT, FADEIN
+        MENU, GAME, FADEOUT, FADEIN, TOBATTLE, BATTLE, FADEFROMBATTLE
     }
 
     public static class StaticVars {
         public static Point Camera = new Point(0, 0);
         public static Room CurrRoom = null;
+        // public static 
 
         public static Pair<Room, Point> Exit = null;
 
