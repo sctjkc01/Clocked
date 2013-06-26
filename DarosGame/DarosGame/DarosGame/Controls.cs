@@ -98,7 +98,7 @@ namespace DarosGame {
         }
 
         public Boolean ConvoNext {
-            get { return keys[Keys.Space].JustPressed || btns[Buttons.A].JustPressed; }
+            get { return keys[Keys.E].JustPressed || btns[Buttons.A].JustPressed; }
         }
     }
 }
