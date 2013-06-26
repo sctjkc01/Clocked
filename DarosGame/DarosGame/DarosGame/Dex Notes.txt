@@ -18,6 +18,9 @@ Enemy Equal animation is frame 1 2 3 4 5 6 then hold 7 for 6 "frames" and then f
 
 Enemy Strong animation is frame 1 2 3 then 4 5 4 5 4 5 4 5 4 5 then 3 2 1 back to idle.
 
+Add function so music can fade and also be lowered. The music at 100% sound is a little too blaring. It needs to normally be at about
+80% or so. Maybe even 65%.
+
 Textbox positioning:
 Top left: Box pos + Point(205, 42)
 Text: 205 -> 770
