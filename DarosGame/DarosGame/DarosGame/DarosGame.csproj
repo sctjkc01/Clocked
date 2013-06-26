@@ -113,6 +113,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleMenu.cs" />
     <Compile Include="Controls.cs" />
     <Compile Include="Convo.cs" />
     <Compile Include="GameObject.cs" />

@@ -12,10 +12,6 @@ using StickXNAEngine.Utility;
 using StickXNAEngine.Graphic;
 
 namespace DarosGame {
-    public enum GameState {
-        MENU, GAME, FADEOUT, FADEIN
-    }
-
     /// <summary>
     /// This is the main type for your game
     /// </summary>
@@ -26,10 +22,6 @@ namespace DarosGame {
         Texture2D whitePixel;
         byte opacity = 0;
         TimeSpan fade = new TimeSpan(150000), timer = new TimeSpan(0);
-
-        public static GameState currState = GameState.GAME;
-
-        Protagonist p;
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -50,8 +42,8 @@ namespace DarosGame {
 
             Room tr = new TestRoom();
             StaticVars.CurrRoom = tr;
-            p = new Protagonist();
-            p.Loc = new Point(588, 696);
+            StaticVars.player = new Protagonist();
+            StaticVars.player.Loc = new Point(588, 696);
 
             PostProcessing.Init();
 
@@ -76,6 +68,8 @@ namespace DarosGame {
             PostProcessing.Res(Content);
             Convo.Conversation.LoadRes(Content);
 
+            StickXNAEngine.Audio.Song.Repeat = true;
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -97,35 +91,37 @@ namespace DarosGame {
             if(GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
                 this.Exit();
 
+            if(!Resources.songs["handylass"].Playing) Resources.songs["handylass"].Playing = true;
+
             // TODO: Add your update logic here
-            if(currState == GameState.GAME) {
+            if(StaticVars.currState == GameState.GAME) {
                 PostProcessing.Update(gameTime);
                 if(StaticVars.Exit != null) {
-                    currState = GameState.FADEOUT;
+                    StaticVars.currState = GameState.FADEOUT;
                     timer = new TimeSpan(0);
                 }
-            } else if(currState == GameState.FADEOUT) {
+            } else if(StaticVars.currState == GameState.FADEOUT) {
                 timer += gameTime.ElapsedGameTime;
                 if(timer > fade) {
                     timer -= fade;
                     if(opacity + 15 > 255) {
                         opacity = 255;
                         StaticVars.CurrRoom = StaticVars.Exit.Item1;
-                        p.Loc = StaticVars.Exit.Item2;
+                        StaticVars.player.Loc = StaticVars.Exit.Item2;
                         timer = new TimeSpan(0);
-                        currState = GameState.FADEIN;
+                        StaticVars.currState = GameState.FADEIN;
                     } else {
                         opacity += 15;
                     }
                 }
-            } else if(currState == GameState.FADEIN) {
+            } else if(StaticVars.currState == GameState.FADEIN) {
                 timer += gameTime.ElapsedGameTime;
                 if(timer > fade) {
                     timer -= fade;
                     if(opacity - 15 < 0) {
                         opacity = 0;
                         StaticVars.Exit = null;
-                        currState = GameState.GAME;
+                        StaticVars.currState = GameState.GAME;
                     } else {
                         opacity -= 15;
                     }
@@ -145,8 +141,8 @@ namespace DarosGame {
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
-            int x = p.Loc.X - 400;
-            int y = p.Loc.Y - 350;
+            int x = StaticVars.player.Loc.X - 400;
+            int y = StaticVars.player.Loc.Y - 350;
 
             x = Math.Max(0, Math.Min(StaticVars.CurrRoom.Size.Width - 800, x));
             y = Math.Max(0, Math.Min(StaticVars.CurrRoom.Size.Height - 600, y));
@@ -158,15 +154,15 @@ namespace DarosGame {
 
             bool pDrawn = false;
             foreach(GameObject obj in StaticVars.CurrRoom.Objects) {
-                if(obj.Loc.Y > p.Loc.Y && !pDrawn) {
-                    p.Draw(spriteBatch);
+                if(obj.Loc.Y > StaticVars.player.Loc.Y && !pDrawn) {
+                    StaticVars.player.Draw(spriteBatch);
                     pDrawn = true;
                 }
                 obj.Draw(spriteBatch);
             }
-            if(!pDrawn) p.Draw(spriteBatch);
+            if(!pDrawn) StaticVars.player.Draw(spriteBatch);
 
-            if(currState == GameState.FADEOUT || currState == GameState.FADEIN) {
+            if(StaticVars.currState == GameState.FADEOUT || StaticVars.currState == GameState.FADEIN) {
                 spriteBatch.Draw(whitePixel, new Vector2(0, 0), null, new Color(0, 0, 0, opacity), 0f, Vector2.Zero, new Vector2(800, 600), SpriteEffects.None, 0);
             }
 

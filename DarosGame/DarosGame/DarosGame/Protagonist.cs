@@ -122,7 +122,7 @@ namespace DarosGame {
                 // </noconv>
             } else { // <conv>
                 Convo.Blurb curr = Convo.Conversation.curr;
-                if(ctrls.Interact) {
+                if(ctrls.ConvoNext) {
                     if(!curr.ShowingAll) {
                         curr.ShowAll();
                     } else {

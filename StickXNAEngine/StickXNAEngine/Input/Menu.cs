@@ -44,5 +44,13 @@ namespace StickXNAEngine.Input {
                 }
             }
         }
+
+        public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch sb) {
+            if(btns.Count > 0) {
+                foreach(Button alpha in btns) {
+                    alpha.Draw(sb);
+                }
+            }
+        }
     }
 }
