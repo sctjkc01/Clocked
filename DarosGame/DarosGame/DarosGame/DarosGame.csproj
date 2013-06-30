@@ -113,9 +113,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Battle.cs" />
     <Compile Include="BattleMenu.cs" />
     <Compile Include="Controls.cs" />
     <Compile Include="Convo.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="ItemFlags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
