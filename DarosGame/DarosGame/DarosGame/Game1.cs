@@ -69,6 +69,7 @@ namespace DarosGame {
             Convo.Conversation.LoadRes(Content);
 
             StickXNAEngine.Audio.Song.Repeat = true;
+            MediaPlayer.Volume = 0.8f;
 
             // TODO: use this.Content to load your game content here
         }

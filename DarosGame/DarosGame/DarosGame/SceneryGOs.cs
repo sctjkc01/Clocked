@@ -7,7 +7,7 @@ using StickXNAEngine.Utility;
 
 namespace DarosGame {
     namespace SceneryGameObjects {
-        public class Sign : SimpleGameObject, IConversable, ISpecificFacing {
+        public class Sign : SimpleGameObject, IInteractive, ISpecificFacing {
             public Sign(Point loc) {
                 location = loc;
                 width = 50;

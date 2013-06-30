@@ -6,15 +6,15 @@ using System.Text;
 namespace DarosGame {
     namespace Enemy {
         public abstract class EnemyType {
-            public static abstract int MaxHP {
+            public abstract int MaxHP {
                 get;
             }
 
-            public static abstract int Def {
+            public abstract int Def {
                 get;
             }
 
-            public static abstract EnemyInstance CreateInstance(Battle.BattleInstance bi);
+            public abstract EnemyInstance CreateInstance(Battle.BattleInstance bi);
         }
 
         public class EnemyInstance {

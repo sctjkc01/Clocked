@@ -1007,20 +1007,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Music\Clocked.mp3">
-      <Name>Clocked</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Music\Clocked_woosh.mp3">
-      <Name>Clocked_woosh</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Menu\Battle Menu\Battle buttons 1.png">
       <Name>Battle buttons 1</Name>
       <Importer>TextureImporter</Importer>
@@ -1072,6 +1058,13 @@
       <Name>Battle Portrait - No Arms - Idle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Music\It%27s Time to Throw Down, Boys!.mp3">
+      <Name>It%27s Time to Throw Down, Boys!</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
