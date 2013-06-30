@@ -21,6 +21,8 @@ Enemy Strong animation is frame 1 2 3 then 4 5 4 5 4 5 4 5 4 5 then 3 2 1 back t
 Add function so music can fade and also be lowered. The music at 100% sound is a little too blaring. It needs to normally be at about
 80% or so. Maybe even 65%.
 
+Imperfect Cube Wondering frames 8 9 10 9 are repeated in that order for 3 or 4 cycles before going to 11.
+
 Textbox positioning:
 Top left: Box pos + Point(205, 42)
 Text: 205 -> 770
