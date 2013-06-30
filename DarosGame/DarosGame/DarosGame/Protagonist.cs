@@ -12,8 +12,19 @@ namespace DarosGame {
     public class Protagonist : Mob {
         private Controls ctrls;
 
+        private ProtagStats stats;
+
+        public ProtagStats Stats {
+            get { return stats; }
+        }
+
         public Protagonist() {
             ctrls = new Controls();
+
+            Stats.MaxHP = 150;
+            Stats.MaxMP = 75;
+            Stats.HP = 150;
+            Stats.MP = 75;
 
             width = 55; height = 10;
         }
@@ -168,6 +179,30 @@ namespace DarosGame {
                 this.walk[dirs[s]] = walker;
                 this.stand[dirs[s]] = new StaticSprite(stand, new Point(35, 102));
             }
+        }
+    }
+
+    public class ProtagStats {
+        private int mhp, mmp, hp, mp;
+
+        public int MaxHP {
+            get { return mhp; }
+            set { mhp = value; }
+        }
+
+        public int MaxMP {
+            get { return mmp; }
+            set { mmp = value; }
+        }
+
+        public int HP {
+            get { return hp; }
+            set { hp = value; }
+        }
+
+        public int MP {
+            get { return mp; }
+            set { mp = value; }
         }
     }
 }
