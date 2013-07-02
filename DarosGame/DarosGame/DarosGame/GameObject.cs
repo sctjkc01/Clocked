@@ -69,10 +69,6 @@ namespace DarosGame {
         void Interact();
     }
 
-    public interface IConversable : IInteractive {
-        // Nothing yet
-    }
-
     public interface ISpecificFacing {
         bool RightFacing(Direction dir);
     }
