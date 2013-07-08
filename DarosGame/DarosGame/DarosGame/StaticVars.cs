@@ -21,6 +21,7 @@ namespace DarosGame {
         public static bool HaveADA = false;
         public static GameState currState = GameState.GAME;
 
+        public static Game1 inst;
         public static Protagonist player;
     }
 

@@ -132,6 +132,10 @@ namespace DarosGame {
                         }
                     }
                 }
+
+                if(ctrls.Fullscreen) {
+                    StaticVars.inst.FullToggle();
+                }
                 // </noconv>
             } else { // <conv>
                 Convo.Blurb curr = Convo.Conversation.curr;
