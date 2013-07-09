@@ -29,7 +29,14 @@ namespace DarosGame {
                 this.background = background;
                 this.theme = theme;
 
-                foreach(
+                foreach(BattleMob alpha in turnOrder) {
+                    if(alpha is BattleProtag) {
+                        bp = (BattleProtag)alpha;
+                    }
+                }
+                if(bp == null) {
+                    throw new Exception("Protagonist not in turn order!");
+                }
             }
 
             public void Update(GameTime gt) {
