@@ -26,8 +26,9 @@ namespace DarosGame {
 
             songs["handylass"] = new Song("Music/A Handy Lass");
             songs["worndown"] = new Song("Music/Worn Down Science");
+            songs["genbattle"] = new Song("Music/It's Time to Throw Down, Boys!");
 
-            title = new MultiPieceSong("Music/Clocked_woosh", "Music/Clocked");
+            // title = new MultiPieceSong("Music/Clocked_woosh", "Music/Clocked"); RESOURCES MISSING!
         }
     }
 }

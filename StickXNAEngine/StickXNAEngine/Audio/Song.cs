@@ -55,6 +55,11 @@ namespace StickXNAEngine.Audio {
             get { return currsong; }
         }
 
+        public static float Volume {
+            get { return MediaPlayer.Volume; }
+            set { MediaPlayer.Volume = value; }
+        }
+
         public XNAVanillaSong InternalSong {
             get { return song; }
         }

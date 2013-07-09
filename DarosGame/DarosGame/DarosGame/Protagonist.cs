@@ -21,6 +21,8 @@ namespace DarosGame {
         public Protagonist() {
             ctrls = new Controls();
 
+            stats = new ProtagStats();
+
             Stats.MaxHP = 150;
             Stats.MaxMP = 75;
             Stats.HP = 150;
@@ -129,6 +131,10 @@ namespace DarosGame {
                             }
                         }
                     }
+                }
+
+                if(ctrls.Fullscreen) {
+                    StaticVars.inst.FullToggle();
                 }
                 // </noconv>
             } else { // <conv>

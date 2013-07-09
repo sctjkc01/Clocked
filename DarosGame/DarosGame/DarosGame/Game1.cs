@@ -46,6 +46,8 @@ namespace DarosGame {
             StaticVars.player = new Protagonist();
             StaticVars.player.Loc = new Point(588, 696);
 
+            StaticVars.inst = this;
+
             PostProcessing.Init();
 
             Console.WriteLine("This Console Box is here for debug testing purposes ONLY!\n");
@@ -70,6 +72,7 @@ namespace DarosGame {
             Convo.Conversation.LoadRes(Content);
 
             StickXNAEngine.Audio.Song.Repeat = true;
+            MediaPlayer.Volume = 0.8f;
 
             // TODO: use this.Content to load your game content here
         }
@@ -172,6 +175,11 @@ namespace DarosGame {
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        public void FullToggle() {
+            graphics.IsFullScreen = !graphics.IsFullScreen;
+            graphics.ApplyChanges();
         }
     }
 }

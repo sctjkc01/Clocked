@@ -5,21 +5,42 @@ using System.Text;
 
 namespace DarosGame {
     namespace Enemy {
-        public abstract class EnemyType {
-            public static abstract int MaxHP {
-                get;
+        public class EnemyType {
+            private int mhp, def;
+
+            public delegate void TakeTurn(Battle.BattleInstance bi);
+            public TakeTurn tt;
+
+            public int MaxHP {
+                get { return mhp; }
+            }
+            public int Def {
+                get { return def; }
             }
 
-            public static abstract int Def {
-                get;
+            public EnemyType(int mhp, int def) {
+                this.mhp = mhp;
+                this.def = def;
             }
 
-            public static abstract EnemyInstance CreateInstance(Battle.BattleInstance bi);
+            public void Turn(Battle.BattleInstance bi) {
+                tt(bi);
+            }
+
         }
 
-        public class EnemyInstance {
+        public class EnemyInstance : Battle.BattleMob {
             private int hp;
-            public EnemyInstance() {
+            private EnemyType et;
+            public EnemyInstance(EnemyType type) {
+                et = type;
+                hp = et.MaxHP;
+            }
+
+            public override void Update(Battle.BattleInstance bi, Microsoft.Xna.Framework.GameTime gt) {
+                if(HasTurn) {
+                    et.Turn(bi);
+                }
             }
         }
     }
