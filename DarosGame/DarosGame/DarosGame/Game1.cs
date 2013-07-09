@@ -29,7 +29,6 @@ namespace DarosGame {
 
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 800;
-            graphics.IsFullscreen = true;
         }
 
         /// <summary>
