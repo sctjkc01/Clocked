@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace DarosGame {
     public enum GameState {
-        MENU, GAME, FADEOUT, FADEIN, TOBATTLE, BATTLE, FADEFROMBATTLE
+        MENU, GAME, FADEOUT, FADEIN, TOBATTLE, BATTLE, FADEFROMBATTLE, TOADA, ADA, FROMADA
     }
 
     public static class StaticVars {
@@ -30,7 +30,10 @@ namespace DarosGame {
         public static int PlayerInteractRange = 100; //Units: Pixels
         public static Keys InteractKey = Keys.E; //Replace letter as you will [REQUIRES RESTART]
 
-        // Chat Variables
+        // Chat Variable
         public static TimeSpan CharDelay = new TimeSpan(200000); //TimeSpan: Unit 100ns = 0.0001ms [REQUIRES RESTART]
+
+        // ADA Variable
+        public static int AdaSwingSpeed = 2; // Units: Pixels per update; update = 1/60 second
     }
 }
