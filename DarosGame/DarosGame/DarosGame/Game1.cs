@@ -22,6 +22,7 @@ namespace DarosGame {
         Texture2D whitePixel;
         byte opacity = 0;
         TimeSpan fade = new TimeSpan(150000), timer = new TimeSpan(0);
+        float adashow = 0.0f;
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -130,9 +131,9 @@ namespace DarosGame {
                     }
                 }
             } else if(StaticVars.currState == GameState.TOADA) {
-
+                adashow = Math.Min(adashow + 0.0715f, 1f);
             } else if(StaticVars.currState == GameState.FROMADA) {
-
+                adashow = Math.Max(adashow - 0.0715f, 0f);
             }
 
             base.Update(gameTime);
