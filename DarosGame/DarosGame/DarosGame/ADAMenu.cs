@@ -40,7 +40,7 @@ namespace DarosGame {
             journal = new Button();
             journal.Area = new Microsoft.Xna.Framework.Rectangle(14, 456, 158, 42);
             journal.OnMouseUp = delegate {
-                
+
             };
 
             skill = new Button();
@@ -89,12 +89,19 @@ namespace DarosGame {
         }
 
         public void Draw(SpriteBatch sb) {
+            menu.Draw(sb);
             switch(currState) {
                 case AMenuState.NONE:
                 case AMenuState.INV:
                 case AMenuState.SKILL:
                 case AMenuState.STAT:
                     break;
+            }
+        }
+
+        public void Draw(SpriteBatch sb, float trans) {
+            foreach(Button alpha in new Button[] { item, stat, journal, skill, quit }) {
+
             }
         }
     }
