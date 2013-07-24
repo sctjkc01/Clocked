@@ -33,8 +33,5 @@ namespace DarosGame {
 
         // Chat Variable
         public static TimeSpan CharDelay = new TimeSpan(200000); //TimeSpan: Unit 100ns = 0.0001ms [REQUIRES RESTART]
-
-        // ADA Variable
-        public static int AdaSwingSpeed = 8; // Units: Pixels per update; update = 1/60 second
     }
 }
