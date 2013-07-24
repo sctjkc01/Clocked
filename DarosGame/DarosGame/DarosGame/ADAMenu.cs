@@ -49,6 +49,12 @@ namespace DarosGame {
                 currState = AMenuState.SKILL;
             };
 
+            quit = new Button();
+            quit.Area = new Rectangle(14, 552, 158, 42);
+            quit.OnMouseUp = delegate {
+                StaticVars.inst.Exit();
+            };
+
             menu = new Menu();
             menu.Add(item);
             menu.Add(journal);
@@ -86,12 +92,21 @@ namespace DarosGame {
 
         public void Update(GameTime gt) {
             menu.Update(gt);
+            StaticVars.player.Ctrls.Update(gt);
+
+            if(StaticVars.player.Ctrls.LeavingADA) {
+                StaticVars.currState = GameState.FROMADA;
+            }
         }
 
         public void Draw(SpriteBatch sb) {
             menu.Draw(sb);
             switch(currState) {
                 case AMenuState.NONE:
+                    foreach(int alpha in new int[] { 463, 508, 554 }) {
+                        currencyBack.Draw(sb, new Point(549, alpha));
+                    }
+                    break;
                 case AMenuState.INV:
                 case AMenuState.SKILL:
                 case AMenuState.STAT:
@@ -101,7 +116,10 @@ namespace DarosGame {
 
         public void Draw(SpriteBatch sb, float trans) {
             foreach(Button alpha in new Button[] { item, stat, journal, skill, quit }) {
-
+                alpha.Idle.Draw(sb, new Point(14 - (int)(182f * (1f - trans)), alpha.Area.Y));
+            }
+            foreach(int alpha in new int[] { 463, 508, 554 }) {
+                currencyBack.Draw(sb, new Point(549 + (int)(254f * (1f - trans)), alpha));
             }
         }
     }

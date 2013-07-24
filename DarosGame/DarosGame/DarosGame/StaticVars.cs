@@ -23,6 +23,7 @@ namespace DarosGame {
 
         public static Game1 inst;
         public static Protagonist player;
+        public static ADAMenu adamenu;
     }
 
     public static class EZTweakVars {
