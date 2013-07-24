@@ -84,9 +84,9 @@ namespace DarosGame {
 
                 alpha.Item1.Hover = new StaticSprite(tex, origin);
                 alpha.Item1.Idle = new StaticSprite(tex, origin);
-                alpha.Item1.Idle.Tint = new Color(240, 240, 240);
+                alpha.Item1.Idle.Tint = new Color(200, 200, 200);
                 alpha.Item1.Press = new StaticSprite(tex, origin);
-                alpha.Item1.Press.Tint = new Color(205, 205, 205);
+                alpha.Item1.Press.Tint = new Color(175, 175, 175);
             }
         }
 
