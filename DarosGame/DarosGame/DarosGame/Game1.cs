@@ -92,10 +92,6 @@ namespace DarosGame {
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime) {
-            // Allows the game to exit
-            if(GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
-                this.Exit();
-
             if(!Resources.songs["handylass"].Playing) Resources.songs["handylass"].Playing = true;
 
             // TODO: Add your update logic here
