@@ -78,7 +78,7 @@ namespace DarosGame {
             skillBack = new StaticSprite(cm.Load<Texture2D>("Menu/Battle Menu/Battle HUD - Arms, Magick"), new Point(0, 0), new Rectangle(0, 0, 370, 79));
             skillDescBack = new StaticSprite(cm.Load<Texture2D>("Menu/Battle Menu/Battle HUD - Arms, Magick"), new Point(0, 0), new Rectangle(395, 0, 372, 79));
 
-            Point origin = new Point(8, 9);
+            Point origin = new Point(22, 3);
             foreach(Pair<Button, string> alpha in new Pair<Button, string>[] { new Pair<Button, string>(item, "Items"), new Pair<Button, string>(journal, "Journal"), new Pair<Button, string>(stat, "Stats"), new Pair<Button, string>(skill, "Skills"), new Pair<Button, string>(quit, "Quit") }) {
                 Texture2D tex = cm.Load<Texture2D>("Menu/Top Menu/Top Menu - " + alpha.Item2);
 
@@ -95,6 +95,7 @@ namespace DarosGame {
             StaticVars.player.Ctrls.Update(gt);
 
             if(StaticVars.player.Ctrls.LeavingADA) {
+                currState = AMenuState.NONE;
                 StaticVars.currState = GameState.FROMADA;
             }
         }
