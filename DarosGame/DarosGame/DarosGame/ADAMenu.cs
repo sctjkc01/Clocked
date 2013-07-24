@@ -28,13 +28,21 @@ namespace DarosGame {
             item = new Button();
             item.Area = new Microsoft.Xna.Framework.Rectangle(14, 362, 158, 42);
             item.OnMouseUp = delegate {
-                currState = AMenuState.INV;
+                if(currState == AMenuState.INV) {
+                    currState = AMenuState.NONE;
+                } else {
+                    currState = AMenuState.INV;
+                }
             };
 
             stat = new Button();
             stat.Area = new Microsoft.Xna.Framework.Rectangle(14, 409, 158, 42);
             stat.OnMouseUp = delegate {
-                currState = AMenuState.STAT;
+                if(currState == AMenuState.STAT) {
+                    currState = AMenuState.NONE;
+                } else {
+                    currState = AMenuState.STAT;
+                }
             };
 
             journal = new Button();
@@ -46,7 +54,11 @@ namespace DarosGame {
             skill = new Button();
             skill.Area = new Microsoft.Xna.Framework.Rectangle(14, 503, 158, 42);
             skill.OnMouseUp = delegate {
-                currState = AMenuState.SKILL;
+                if(currState == AMenuState.SKILL) {
+                    currState = AMenuState.NONE;
+                } else {
+                    currState = AMenuState.SKILL;
+                }
             };
 
             quit = new Button();
