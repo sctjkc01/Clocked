@@ -22,6 +22,8 @@ namespace DarosGame {
         private StaticSprite itemBack, itemDescBack;
         private StaticSprite skillBack, skillDescBack;
 
+        private float invSlide = 0.00f, statSlide = 0.00f, skillSlide = 0.00f;
+
         public ADAMenu() {
             PostProcessing.Add((IRequireResource)this);
 
@@ -114,16 +116,14 @@ namespace DarosGame {
 
         public void Draw(SpriteBatch sb) {
             menu.Draw(sb);
-            switch(currState) {
-                case AMenuState.NONE:
-                    foreach(int alpha in new int[] { 463, 508, 554 }) {
-                        currencyBack.Draw(sb, new Point(549, alpha));
-                    }
-                    break;
-                case AMenuState.INV:
-                case AMenuState.SKILL:
-                case AMenuState.STAT:
-                    break;
+            if(currState == AMenuState.NONE) {
+                foreach(int alpha in new int[] { 463, 508, 554 }) {
+                    currencyBack.Draw(sb, new Point(549, alpha));
+                }
+            }
+
+            if(invSlide != 0.00f) {
+                invBack.Draw(sb, new Point(
             }
         }
 
