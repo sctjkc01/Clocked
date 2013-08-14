@@ -22,7 +22,7 @@ namespace DarosGame {
         private StaticSprite itemBack, itemDescBack;
         private StaticSprite skillBack, skillDescBack;
 
-        private float currSlide = 0.00f, invSlide = 0.00f, statSlide = 0.00f, skillSlide = 0.00f;
+        private float currSlide = 1.00f, invSlide = 0.00f, statSlide = 0.00f, skillSlide = 0.00f;
 
         public ADAMenu() {
             PostProcessing.Add((IRequireResource)this);
@@ -110,30 +110,31 @@ namespace DarosGame {
 
             if(StaticVars.player.Ctrls.LeavingADA) {
                 currState = AMenuState.NONE;
+                currSlide = 1f; statSlide = 0f; invSlide = 0f; skillSlide = 0f;
                 StaticVars.currState = GameState.FROMADA;
+            } else {
+                float dCurr = -0.05f, dInv = -0.05f, dStat = -0.05f, dSkill = -0.05f;
+
+                switch(currState) {
+                    case AMenuState.NONE:
+                        dCurr *= -1;
+                        break;
+                    case AMenuState.INV:
+                        dInv *= -1;
+                        break;
+                    case AMenuState.SKILL:
+                        dSkill *= -1;
+                        break;
+                    case AMenuState.STAT:
+                        dStat *= -1;
+                        break;
+                }
+
+                currSlide = Math.Max(Math.Min(currSlide + dCurr, 1f), 0f);
+                invSlide = Math.Max(Math.Min(invSlide + dInv, 1f), 0f);
+                skillSlide = Math.Max(Math.Min(skillSlide + dSkill, 1f), 0f);
+                statSlide = Math.Max(Math.Min(statSlide + dStat, 1f), 0f);
             }
-
-            float dCurr = -0.05f, dInv = -0.05f, dStat = -0.05f, dSkill = -0.05f;
-
-            switch(currState) {
-                case AMenuState.NONE:
-                    dCurr *= -1;
-                    break;
-                case AMenuState.INV:
-                    dInv *= -1;
-                    break;
-                case AMenuState.SKILL:
-                    dSkill *= -1;
-                    break;
-                case AMenuState.STAT:
-                    dStat *= -1;
-                    break;
-            }
-
-            currSlide = Math.Max(Math.Min(currSlide + dCurr, 1f), 0f);
-            invSlide = Math.Max(Math.Min(invSlide + dInv, 1f), 0f);
-            skillSlide = Math.Max(Math.Min(skillSlide + dSkill, 1f), 0f);
-            statSlide = Math.Max(Math.Min(statSlide + dStat, 1f), 0f);
         }
 
         public void Draw(SpriteBatch sb) {
