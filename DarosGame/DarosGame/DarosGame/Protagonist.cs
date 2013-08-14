@@ -18,6 +18,10 @@ namespace DarosGame {
             get { return stats; }
         }
 
+        public Controls Ctrls {
+            get { return ctrls; }
+        }
+
         public Protagonist() {
             ctrls = new Controls();
 
@@ -94,17 +98,17 @@ namespace DarosGame {
                             location.Y -= speed;
                         }
                     }
-                }
-                Pair<Room, Point> exit = StaticVars.CurrRoom.Exit(this);
-                if(exit != null) {
-                    StaticVars.Exit = exit;
-                }
 
-                foreach(Direction alpha in walk.Keys) {
-                    ((AnimateSprite)walk[alpha]).Update(gt);
-                }
+                    //Check if in an exit.
+                    Pair<Room, Point> exit = StaticVars.CurrRoom.Exit(this);
+                    if(exit != null) {
+                        StaticVars.Exit = exit;
+                    }
 
-                if(ctrls.Interact) {
+                    foreach(Direction alpha in walk.Keys) {
+                        ((AnimateSprite)walk[alpha]).Update(gt);
+                    }
+                } else if(ctrls.Interact) {
                     Rectangle range = this.CollisionBox;
                     if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
                         range.Y -= EZTweakVars.PlayerInteractRange;
@@ -131,9 +135,9 @@ namespace DarosGame {
                             }
                         }
                     }
-                }
-
-                if(ctrls.Fullscreen) {
+                } else if(ctrls.EnteringADA) {
+                    StaticVars.currState = GameState.TOADA;
+                } else if(ctrls.Fullscreen) {
                     StaticVars.inst.FullToggle();
                 }
                 // </noconv>

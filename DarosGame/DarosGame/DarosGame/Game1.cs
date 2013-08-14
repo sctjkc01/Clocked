@@ -22,6 +22,7 @@ namespace DarosGame {
         Texture2D whitePixel;
         byte opacity = 0;
         TimeSpan fade = new TimeSpan(150000), timer = new TimeSpan(0);
+        float adashow = 0.0f;
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -44,6 +45,7 @@ namespace DarosGame {
             StaticVars.CurrRoom = tr;
             StaticVars.player = new Protagonist();
             StaticVars.player.Loc = new Point(588, 696);
+            StaticVars.adamenu = new ADAMenu();
 
             StaticVars.inst = this;
 
@@ -90,10 +92,6 @@ namespace DarosGame {
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime) {
-            // Allows the game to exit
-            if(GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
-                this.Exit();
-
             if(!Resources.songs["handylass"].Playing) Resources.songs["handylass"].Playing = true;
 
             // TODO: Add your update logic here
@@ -129,6 +127,20 @@ namespace DarosGame {
                         opacity -= 15;
                     }
                 }
+            } else if(StaticVars.currState == GameState.TOADA) {
+                IsMouseVisible = true;
+                adashow = Math.Min(adashow + 0.0715f, 1f);
+                if(adashow == 1f) {
+                    StaticVars.currState = GameState.ADA;
+                }
+            } else if(StaticVars.currState == GameState.FROMADA) {
+                adashow = Math.Max(adashow - 0.0715f, 0f);
+                if(adashow == 0f) {
+                    StaticVars.currState = GameState.GAME;
+                    IsMouseVisible = false;
+                }
+            } else if(StaticVars.currState == GameState.ADA) {
+                StaticVars.adamenu.Update(gameTime);
             }
 
             base.Update(gameTime);
@@ -167,6 +179,10 @@ namespace DarosGame {
 
             if(StaticVars.currState == GameState.FADEOUT || StaticVars.currState == GameState.FADEIN) {
                 spriteBatch.Draw(whitePixel, new Vector2(0, 0), null, new Color(0, 0, 0, opacity), 0f, Vector2.Zero, new Vector2(800, 600), SpriteEffects.None, 0);
+            } else if(StaticVars.currState == GameState.TOADA || StaticVars.currState == GameState.FROMADA) {
+                StaticVars.adamenu.Draw(spriteBatch, adashow);
+            } else if(StaticVars.currState == GameState.ADA) {
+                StaticVars.adamenu.Draw(spriteBatch);
             }
 
             Convo.Conversation.Draw(spriteBatch);

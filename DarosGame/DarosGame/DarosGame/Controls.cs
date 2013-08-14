@@ -21,6 +21,7 @@ namespace DarosGame {
             keys[Keys.S] = new KeyboardKey(Keys.S);
             keys[Keys.D] = new KeyboardKey(Keys.D);
             keys[Keys.R] = new KeyboardKey(Keys.R);
+            keys[Keys.Escape] = new KeyboardKey(Keys.Escape);
             keys[Keys.F] = new KeyboardKey(Keys.F);
             keys[EZTweakVars.InteractKey] = new KeyboardKey(EZTweakVars.InteractKey);
             keys[Keys.Space] = new KeyboardKey(Keys.Space);
@@ -64,8 +65,12 @@ namespace DarosGame {
             get { return keys[Keys.D].IsPressed || btns[Buttons.LeftThumbstickRight].IsPressed; }
         }
 
-        public Boolean PressingADA {
+        public Boolean EnteringADA {
             get { return keys[Keys.R].JustPressed || btns[Buttons.Y].JustPressed; }
+        }
+
+        public Boolean LeavingADA {
+            get { return keys[Keys.R].JustPressed || keys[Keys.Escape].JustPressed || btns[Buttons.B].JustPressed; }
         }
 
         public Boolean Fullscreen {
