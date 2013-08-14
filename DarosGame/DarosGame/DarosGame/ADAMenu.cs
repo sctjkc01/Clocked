@@ -22,7 +22,7 @@ namespace DarosGame {
         private StaticSprite itemBack, itemDescBack;
         private StaticSprite skillBack, skillDescBack;
 
-        private float invSlide = 0.00f, statSlide = 0.00f, skillSlide = 0.00f;
+        private float currSlide = 0.00f, invSlide = 0.00f, statSlide = 0.00f, skillSlide = 0.00f;
 
         public ADAMenu() {
             PostProcessing.Add((IRequireResource)this);
@@ -112,18 +112,48 @@ namespace DarosGame {
                 currState = AMenuState.NONE;
                 StaticVars.currState = GameState.FROMADA;
             }
+
+            float dCurr = -0.05f, dInv = -0.05f, dStat = -0.05f, dSkill = -0.05f;
+
+            switch(currState) {
+                case AMenuState.NONE:
+                    dCurr *= -1;
+                    break;
+                case AMenuState.INV:
+                    dInv *= -1;
+                    break;
+                case AMenuState.SKILL:
+                    dSkill *= -1;
+                    break;
+                case AMenuState.STAT:
+                    dStat *= -1;
+                    break;
+            }
+
+            currSlide = Math.Max(Math.Min(currSlide + dCurr, 1f), 0f);
+            invSlide = Math.Max(Math.Min(invSlide + dInv, 1f), 0f);
+            skillSlide = Math.Max(Math.Min(skillSlide + dSkill, 1f), 0f);
+            statSlide = Math.Max(Math.Min(statSlide + dStat, 1f), 0f);
         }
 
         public void Draw(SpriteBatch sb) {
             menu.Draw(sb);
-            if(currState == AMenuState.NONE) {
+            if(currSlide != 0.00f) {
                 foreach(int alpha in new int[] { 463, 508, 554 }) {
-                    currencyBack.Draw(sb, new Point(549, alpha));
+                    currencyBack.Draw(sb, new Point(800 - (int)(251f * currSlide), alpha));
                 }
             }
 
             if(invSlide != 0.00f) {
-                invBack.Draw(sb, new Point(
+                invBack.Draw(sb, new Point(800 - (int)(600f * invSlide), -3));
+            }
+
+            if(statSlide != 0.00f) {
+                // N/A
+            }
+
+            if(skillSlide != 0.00f) {
+                invBack.Draw(sb, new Point(800 - (int)(600f * skillSlide), -3));
             }
         }
 
