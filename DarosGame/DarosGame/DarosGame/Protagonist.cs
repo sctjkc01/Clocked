@@ -32,6 +32,10 @@ namespace DarosGame {
             Stats.HP = 150;
             Stats.MP = 75;
 
+            //Testing code!
+            Stats.Inv.AddPocket();
+            //</test>
+
             width = 55; height = 10;
         }
 
@@ -194,6 +198,7 @@ namespace DarosGame {
 
     public class ProtagStats {
         private int mhp, mmp, hp, mp;
+        private Inventory inv;
 
         public int MaxHP {
             get { return mhp; }
@@ -213,6 +218,86 @@ namespace DarosGame {
         public int MP {
             get { return mp; }
             set { mp = value; }
+        }
+
+        public Inventory Inv {
+            get { return inv; }
+        }
+
+        public ProtagStats() {
+            inv = new Inventory();
+        }
+    }
+
+    public class Inventory {
+        public class Pocket {
+            private Item.Item[] content;
+
+            public Pocket() {
+                content = new Item.Item[20];
+            }
+
+            public Item.Item[] Content {
+                get { return content; }
+            }
+
+            public Item.Item this[int index] {
+                get { return content[index]; }
+                set { content[index] = value; }
+            }
+
+            public void Add(Item.Item alpha) {
+                for(int i = 0; i < 20; i++) {
+                    if(content[i] == null) { content[i] = alpha; return; }
+                }
+                throw new Exception(); // Cannot add specified item; not enough space
+            }
+        }
+
+        private List<Pocket> pkts;
+
+        public Inventory() {
+            pkts = new List<Pocket>();
+        }
+
+        public void AddPocket() {
+            AddPockets(1);
+        }
+
+        public void AddPockets(int num) {
+            for(int i = 0; i < num; i++) {
+                pkts.Add(new Pocket());
+            }
+        }
+
+        public List<Pocket> Pockets {
+            get { return pkts; }
+        }
+
+        public int FreeSpace {
+            get {
+                int rtn = 0;
+
+                foreach(Pocket alpha in pkts) {
+                    foreach(Item.Item beta in alpha.Content) {
+                        if(beta == null) rtn++;
+                    }
+                }
+
+                return rtn;
+            }
+        }
+
+        public void Add(Item.Item alpha) {
+            foreach(Pocket beta in pkts) {
+                try {
+                    beta.Add(alpha);
+                    return; // Added item; can finish
+                } catch(Exception) { // Cannot add item; not enough space
+                    // Try next pocket
+                }
+            }
+            throw new Exception();  // Cannot add item; no space in any pocket
         }
     }
 }

@@ -9,6 +9,8 @@ using StickXNAEngine.Utility;
 
 namespace DarosGame {
     namespace Convo {
+        public delegate void ConvoMethod();
+
         public static class Conversation {
             public static Blurb curr = null;
 
@@ -286,10 +288,26 @@ namespace DarosGame {
 
         public abstract class MethodBlurb : LinearBlurb {
 
-            public Delegate method;
+            public ConvoMethod method;
 
             public override void FinalizeInit() {
                 throw new NotImplementedException();
+            }
+        }
+
+        public class VolatileMethodBlurb : VolatileBlurb {
+            public ConvoMethod method;
+            public bool fired = false;
+
+            public VolatileMethodBlurb(string msg, ConvoMethod method) : base(msg) { this.method = method; }
+            public VolatileMethodBlurb(string img, string msg, string name, bool top, bool showall, Blurb next, ConvoMethod method) : base(img, msg, name, top, showall, next) { this.method = method; }
+
+            public override void Update(GameTime gt) {
+                if(!fired && ShowingAll) {
+                    fired = true;
+                    method();
+                }
+                base.Update(gt);
             }
         }
     }

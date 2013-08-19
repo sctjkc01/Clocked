@@ -7,6 +7,8 @@ using StickXNAEngine.Graphic;
 using Microsoft.Xna.Framework;
 using StickXNAEngine.Utility;
 
+using DarosGame.Item;
+
 namespace DarosGame {
     public abstract class Room : IRequireResource, INeedMoreInit {
         protected StaticSprite background;
@@ -47,7 +49,7 @@ namespace DarosGame {
                 }
             }
             foreach(GameObject alpha in objs) {
-                if(go != alpha && go.CollisionBox.Intersects(alpha.CollisionBox)) {
+                if(go != alpha && go.CollisionBox.Intersects(alpha.CollisionBox) && !(alpha is Item.GroundItem)) {
                     return true;
                 }
             }
@@ -136,7 +138,12 @@ namespace DarosGame {
 
             // Adding Game Objects to room
             Add(new SceneryGameObjects.Sign(new Point(749,601)));
-
+            Add(new GroundItem(new Item.Orange(), new Point(800, 700)));
+            Add(new GroundItem(new Item.Orange(), new Point(850, 700)));
+            Add(new GroundItem(new Item.Orange(), new Point(900, 700)));
+            Add(new GroundItem(new Item.Orange(), new Point(800, 750)));
+            Add(new GroundItem(new Item.Orange(), new Point(850, 750)));
+            Add(new GroundItem(new Item.Orange(), new Point(900, 750)));
 
             // Have Game Objects in room sorted by Y value
             objs.Sort();
