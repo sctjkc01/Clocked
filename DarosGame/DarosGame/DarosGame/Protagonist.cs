@@ -135,6 +135,7 @@ namespace DarosGame {
                             if(!(alpha is ISpecificFacing) || ((ISpecificFacing)alpha).RightFacing(facing)) {
                                 if(range.Contains(alpha.Loc)) {
                                     ((IInteractive)alpha).Interact();
+                                    break;
                                 }
                             }
                         }
