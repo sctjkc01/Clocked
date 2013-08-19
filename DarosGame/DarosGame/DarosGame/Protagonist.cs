@@ -114,6 +114,10 @@ namespace DarosGame {
                     }
                 } else if(ctrls.Interact) {
                     Rectangle range = this.CollisionBox;
+
+                    range.Y -= 15;
+                    range.Height += 30;
+
                     if(facing == Direction.NORTH || facing == Direction.NORTHEAST || facing == Direction.NORTHWEST) {
                         range.Y -= EZTweakVars.PlayerInteractRange;
                         range.Height += EZTweakVars.PlayerInteractRange;
