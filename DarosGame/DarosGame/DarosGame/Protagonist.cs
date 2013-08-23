@@ -33,7 +33,7 @@ namespace DarosGame {
             Stats.MP = 75;
 
             //Testing code!
-            Stats.Inv.AddPocket();
+            Stats.Inv.AddPockets(6);
             //</test>
 
             width = 55; height = 10;

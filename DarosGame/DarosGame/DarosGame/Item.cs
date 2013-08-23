@@ -63,6 +63,10 @@ namespace DarosGame {
                 get { return name; }
             }
 
+            public String Desc {
+                get { return desc; }
+            }
+
             public StaticSprite GSprite {
                 get { return groundSprite; }
             }

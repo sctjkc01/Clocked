@@ -16,6 +16,7 @@ namespace StickXNAEngine.Input {
         private MouseEvent omd, held, omu;
         private bool mhover = false, mclick = false;
         private Rectangle area;
+        private bool fhover = false, fclick = false;
 
         /// <summary>
         /// The Sprite to use while the button's idling - not clicked, not hovered over.
@@ -86,7 +87,7 @@ namespace StickXNAEngine.Input {
         /// </summary>
         public bool IsHovering {
             get { return mhover; }
-            set { mhover = value; }
+            set { fhover = value; }
         }
 
         /// <summary>
@@ -103,6 +104,14 @@ namespace StickXNAEngine.Input {
                 }
                 mclick = value;
             }
+        }
+
+        /// <summary>
+        /// Force a display of the "pressed" sprite?
+        /// </summary>
+        public bool ForcePressed {
+            get { return fclick; }
+            set { fclick = value; }
         }
 
         /// <summary>
@@ -161,8 +170,8 @@ namespace StickXNAEngine.Input {
 
         public void Draw(SpriteBatch sb) {
             if(visible) {
-                if(mhover) {
-                    if(mclick) {
+                if(mhover || fhover || fclick) {
+                    if(mclick || fclick) {
                         press.Draw(sb, new Point(area.X, area.Y));
                     } else {
                         hover.Draw(sb, new Point(area.X, area.Y));
