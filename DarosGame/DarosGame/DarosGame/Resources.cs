@@ -13,6 +13,8 @@ namespace DarosGame {
         public static Dictionary<string, Song> songs = new Dictionary<string, Song>();
         public static MultiPieceSong title;
 
+        public static StickXNAEngine.Graphic.StaticSprite curs;
+
         public static void InitResources(ContentManager cm) {
             fonts["04b03m"] = cm.Load<SpriteFont>("04b03");
             fonts["04b03s"] = cm.Load<SpriteFont>("04b03small");
@@ -29,6 +31,10 @@ namespace DarosGame {
             songs["genbattle"] = new Song("Music/It's Time to Throw Down, Boys!");
 
             // title = new MultiPieceSong("Music/Clocked_woosh", "Music/Clocked"); RESOURCES MISSING!
+
+            // --------------------- //
+
+            curs = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("Menu/Top Menu/Cursor"), new Microsoft.Xna.Framework.Point(4, 3));
         }
     }
 }

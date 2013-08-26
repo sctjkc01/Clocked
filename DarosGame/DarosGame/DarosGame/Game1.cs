@@ -128,7 +128,7 @@ namespace DarosGame {
                     }
                 }
             } else if(StaticVars.currState == GameState.TOADA) {
-                IsMouseVisible = true;
+                StaticVars.showCursor = true;
                 adashow = Math.Min(adashow + 0.0715f, 1f);
                 if(adashow == 1f) {
                     StaticVars.currState = GameState.ADA;
@@ -137,7 +137,7 @@ namespace DarosGame {
                 adashow = Math.Max(adashow - 0.0715f, 0f);
                 if(adashow == 0f) {
                     StaticVars.currState = GameState.GAME;
-                    IsMouseVisible = false;
+                    StaticVars.showCursor = false;
                 }
             } else if(StaticVars.currState == GameState.ADA) {
                 StaticVars.adamenu.Update(gameTime);
@@ -186,6 +186,11 @@ namespace DarosGame {
             }
 
             Convo.Conversation.Draw(spriteBatch);
+
+            if(StaticVars.showCursor) {
+                MouseState ms = Mouse.GetState();
+                Resources.curs.Draw(spriteBatch, new Point(ms.X, ms.Y));
+            }
 
             spriteBatch.End();
 
