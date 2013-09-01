@@ -257,6 +257,22 @@ namespace DarosGame {
                 }
                 throw new Exception(); // Cannot add specified item; not enough space
             }
+
+            public void Condense() {
+                for(int x = 0; x < 20; x++) {
+                    int space = -1;
+                    for(int i = x; i < 20; i++) {
+                        if(content[i] == null && space == -1) {
+                            space = i;
+                            if(space == 19) return;
+                        } else if(content[i] != null && space != -1) {
+                            content[space] = content[i];
+                            content[i] = null;
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         private List<Pocket> pkts;

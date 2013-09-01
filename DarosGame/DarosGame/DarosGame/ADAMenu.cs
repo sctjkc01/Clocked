@@ -31,7 +31,16 @@ namespace DarosGame {
         /// Pocket Tabs are centered on line after this tab
         /// </summary>
         private int pktCenter = 1;
-        private Button[] itemButtons;
+        private ItemButton[] itemButtons; private int currDragButton = -1;
+
+        public int CDB {
+            get { return currDragButton; }
+            set { currDragButton = value; }
+        }
+
+        public Inventory.Pocket CurrPkt {
+            get { return StaticVars.player.Stats.Inv.Pockets[currPkt]; }
+        }
 
         public ADAMenu() {
             PostProcessing.Add((IRequireResource)this);
@@ -110,16 +119,56 @@ namespace DarosGame {
                 pktButtons[i + 1].Area = new Rectangle(244 + (i * 121), 55, 121, 19);
             }
             pktButtons[1].OnMouseUp = delegate {
-                currPkt = pktCenter - 1;
+                if(currDragButton == -1) {
+                    currPkt = pktCenter - 1;
+                    StaticVars.player.Stats.Inv.Pockets[currPkt].Condense();
+                } else {
+                    if(StaticVars.player.Stats.Inv.Pockets[pktCenter - 1].Content.Contains<Item.Item>(null)) { // Contains empty space...
+                        Item.Item alpha = StaticVars.player.Stats.Inv.Pockets[currPkt][currDragButton];
+                        StaticVars.player.Stats.Inv.Pockets[pktCenter - 1].Add(alpha);
+                        StaticVars.player.Stats.Inv.Pockets[currPkt][currDragButton] = null;
+                    }
+                }
+                currDragButton = -1;
             };
             pktButtons[2].OnMouseUp = delegate {
-                currPkt = pktCenter;
+                if(currDragButton == -1) {
+                    currPkt = pktCenter;
+                    StaticVars.player.Stats.Inv.Pockets[currPkt].Condense();
+                } else {
+                    if(StaticVars.player.Stats.Inv.Pockets[pktCenter].Content.Contains<Item.Item>(null)) { // Contains empty space...
+                        Item.Item alpha = StaticVars.player.Stats.Inv.Pockets[currPkt][currDragButton];
+                        StaticVars.player.Stats.Inv.Pockets[pktCenter].Add(alpha);
+                        StaticVars.player.Stats.Inv.Pockets[currPkt][currDragButton] = null;
+                    }
+                }
+                currDragButton = -1;
             };
             pktButtons[3].OnMouseUp = delegate {
-                currPkt = pktCenter + 1;
+                if(currDragButton == -1) {
+                    currPkt = pktCenter + 1;
+                    StaticVars.player.Stats.Inv.Pockets[currPkt].Condense();
+                } else {
+                    if(StaticVars.player.Stats.Inv.Pockets[pktCenter + 1].Content.Contains<Item.Item>(null)) { // Contains empty space...
+                        Item.Item alpha = StaticVars.player.Stats.Inv.Pockets[currPkt][currDragButton];
+                        StaticVars.player.Stats.Inv.Pockets[pktCenter + 1].Add(alpha);
+                        StaticVars.player.Stats.Inv.Pockets[currPkt][currDragButton] = null;
+                    }
+                }
+                currDragButton = -1;
             };
             pktButtons[4].OnMouseUp = delegate {
-                currPkt = pktCenter + 2;
+                if(currDragButton == -1) {
+                    currPkt = pktCenter + 2;
+                    StaticVars.player.Stats.Inv.Pockets[currPkt].Condense();
+                } else {
+                    if(StaticVars.player.Stats.Inv.Pockets[pktCenter + 2].Content.Contains<Item.Item>(null)) { // Contains empty space...
+                        Item.Item alpha = StaticVars.player.Stats.Inv.Pockets[currPkt][currDragButton];
+                        StaticVars.player.Stats.Inv.Pockets[pktCenter + 2].Add(alpha);
+                        StaticVars.player.Stats.Inv.Pockets[currPkt][currDragButton] = null;
+                    }
+                }
+                currDragButton = -1;
             };
 
             // Scroll Right button
@@ -137,13 +186,10 @@ namespace DarosGame {
                 pktButtons[0].Visible = true;
             };
 
-            itemButtons = new Button[20];
+            itemButtons = new ItemButton[20];
 
             for(int i = 0; i < 20; i++) {
-                itemButtons[i] = new Button();
-                itemButtons[i].Active = false;
-                itemButtons[i].Visible = false;
-                itemButtons[i].Area = new Rectangle(244 + (i > 9 ? 258 : 0), 90 + ((i % 10) * 31), 234, 24);
+                itemButtons[i] = new ItemButton(i, this);
             }
         }
 
@@ -195,11 +241,11 @@ namespace DarosGame {
 
             Texture2D block = cm.Load<Texture2D>("Menu/Top Menu/Item Block");
             for(int i = 0; i < 20; i++) {
-                itemButtons[i].Hover = new StaticSprite(block);
-                itemButtons[i].Idle = new StaticSprite(block);
-                itemButtons[i].Idle.Tint = new Color(200, 200, 200);
-                itemButtons[i].Press = new StaticSprite(block);
-                itemButtons[i].Press.Tint = new Color(175, 175, 175);
+                itemButtons[i].Btn.Hover = new StaticSprite(block);
+                itemButtons[i].Btn.Idle = new StaticSprite(block);
+                itemButtons[i].Btn.Idle.Tint = new Color(200, 200, 200);
+                itemButtons[i].Btn.Press = new StaticSprite(block);
+                itemButtons[i].Btn.Press.Tint = new Color(175, 175, 175);
             }
         }
 
@@ -214,8 +260,8 @@ namespace DarosGame {
             for(int i = 1; i < 5; i++) {
                 pktButtons[i].IsHovering = pktCenter + i - 2 == currPkt;
             }
-            foreach(Button alpha in itemButtons) {
-                alpha.Update(ms, gt);
+            foreach(ItemButton alpha in itemButtons) {
+                alpha.Btn.Update(ms, gt);
             }
 
             if(StaticVars.player.Ctrls.LeavingADA) {
@@ -268,9 +314,8 @@ namespace DarosGame {
 
                     if(StaticVars.player.Stats.Inv.Pockets[currPkt] != null) {
                         for(int i = 0; i < 20; i++) {
-                            bool vis = StaticVars.player.Stats.Inv.Pockets[currPkt][i] != null;
-                            itemButtons[i].Visible = vis;
-                            itemButtons[i].Active = vis;
+                            itemButtons[i].Btn.Visible = true;
+                            itemButtons[i].Btn.Active = true;
                         }
                     }
                 } else {
@@ -279,8 +324,8 @@ namespace DarosGame {
                         alpha.Active = false;
                     }
                     for(int i = 0; i < 20; i++) {
-                        itemButtons[i].Visible = false;
-                        itemButtons[i].Active = false;
+                        itemButtons[i].Btn.Visible = false;
+                        itemButtons[i].Btn.Active = false;
                     }
                 }
 
@@ -310,10 +355,10 @@ namespace DarosGame {
 
                 DarosGame.Inventory.Pocket pkt = StaticVars.player.Stats.Inv.Pockets[currPkt];
                 for(int i = 0; i < 20; i++) {
-                    Button alpha = itemButtons[i];
-                    if(alpha.Visible) {
-                        alpha.Draw(sb);
-                        sb.DrawString(Resources.fonts["04b03s"], pkt[i].Name, new Vector2(alpha.Area.X + 10, alpha.Area.Y + 6), new Color(200, 200, 200));
+                    Button alpha = itemButtons[i].Btn;
+                    alpha.Draw(sb);
+                    if(pkt[i] != null && invSlide == 1f) {
+                        sb.DrawString(Resources.fonts["04b03s"], i + ": " + pkt[i].Name, new Vector2(alpha.Area.X + 10, alpha.Area.Y + 6), new Color(200, 200, 200));
                     }
                 }
             }
@@ -333,6 +378,38 @@ namespace DarosGame {
             }
             foreach(int alpha in new int[] { 463, 508, 554 }) {
                 currencyBack.Draw(sb, new Point(549 + (int)(254f * (1f - trans)), alpha));
+            }
+        }
+
+        private class ItemButton {
+            private Button btn;
+            private int i;
+
+            public Button Btn {
+                get { return btn; }
+            }
+
+            public ItemButton(int i, ADAMenu inst) {
+                this.i = i;
+                btn = new Button();
+                btn.Area = new Rectangle(244 + (i > 9 ? 240 : 0), 90 + ((i % 10) * 31), 234, 24);
+
+                btn.OnMouseDown = delegate {
+                    if(inst.CDB == -1) {
+                        inst.CDB = i;
+                    }
+                };
+
+                btn.OnMouseUp = delegate {
+                    if(inst.CDB != i) {
+                        DarosGame.Inventory.Pocket pkt = inst.CurrPkt;
+                        Item.Item temp = pkt[i];
+                        pkt[i] = pkt[inst.CDB];
+                        pkt[inst.CDB] = temp;
+                        temp = null;
+                    }
+                    inst.CDB = -1;
+                };
             }
         }
     }

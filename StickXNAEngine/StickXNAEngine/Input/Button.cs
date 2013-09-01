@@ -170,7 +170,7 @@ namespace StickXNAEngine.Input {
 
         public void Draw(SpriteBatch sb) {
             if(visible) {
-                if(mhover || fhover || fclick) {
+                if(active && (mhover || fhover || fclick)) {
                     if(mclick || fclick) {
                         press.Draw(sb, new Point(area.X, area.Y));
                     } else {
