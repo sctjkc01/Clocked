@@ -342,6 +342,15 @@ namespace DarosGame {
                 }
             }
 
+            MouseState ms = Mouse.GetState();
+            if(ms.LeftButton == ButtonState.Released) {
+                Resources.curs.Draw(sb, new Point(ms.X, ms.Y));
+            } else if(currDragButton != -1) {
+                Resources.cursDrag.Draw(sb, new Point(ms.X, ms.Y));
+            } else {
+                Resources.cursClick.Draw(sb, new Point(ms.X, ms.Y));
+            }
+
             if(invSlide != 0.00f) {
                 invBack.Draw(sb, new Point(800 - (int)(600f * invSlide), -3));
 

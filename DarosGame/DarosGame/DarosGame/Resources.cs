@@ -13,7 +13,7 @@ namespace DarosGame {
         public static Dictionary<string, Song> songs = new Dictionary<string, Song>();
         public static MultiPieceSong title;
 
-        public static StickXNAEngine.Graphic.StaticSprite curs;
+        public static StickXNAEngine.Graphic.StaticSprite curs, cursClick, cursDrag;
 
         public static void InitResources(ContentManager cm) {
             fonts["04b03m"] = cm.Load<SpriteFont>("04b03");
@@ -35,6 +35,8 @@ namespace DarosGame {
             // --------------------- //
 
             curs = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("Menu/Top Menu/Cursor"), new Microsoft.Xna.Framework.Point(4, 3));
+            cursClick = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("Menu/Top Menu/Cursor"), new Microsoft.Xna.Framework.Point(4, 3));
+            cursDrag = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("Menu/Top Menu/Cursor"), new Microsoft.Xna.Framework.Point(4, 3));
         }
     }
 }
