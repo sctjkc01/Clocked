@@ -99,5 +99,16 @@ namespace DarosGame {
                 sprite = new StaticSprite(cm.Load<Texture2D>("test/orange"));
             }
         }
+
+        public class LoadedDice : Item {
+            public LoadedDice() {
+                name = "Loaded Dice";
+                desc = "tdb";
+            }
+
+            public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
+                sprite = new StaticSprite(cm.Load<Texture2D>("Items/I - Loaded Dice"));
+            }
+        }
     }
 }
