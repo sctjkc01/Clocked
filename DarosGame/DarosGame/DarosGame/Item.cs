@@ -28,7 +28,7 @@ namespace DarosGame {
             }
 
             public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
-                sprite = item.GSprite;
+                sprite = item.sprite;
             }
 
             public void Interact() {
@@ -44,6 +44,10 @@ namespace DarosGame {
                     }
                 });
             }
+
+            public override void Draw(SpriteBatch sb) {
+                sprite.Draw(sb, new Point(location.X - StaticVars.Camera.X, location.Y - StaticVars.Camera.Y), new Vector2(0.5f, 0.5f));
+            }
         }
 
         public abstract class Item : IRequireResource {
@@ -52,8 +56,7 @@ namespace DarosGame {
             protected string name, desc;
 
             protected OnUse function;
-            protected StaticSprite groundSprite, invSprite;
-            protected Sprite detailSprite;
+            protected Sprite sprite;
 
             protected List<ItemFlags> flags;
 
@@ -67,16 +70,8 @@ namespace DarosGame {
                 get { return desc; }
             }
 
-            public StaticSprite GSprite {
-                get { return groundSprite; }
-            }
-
-            public StaticSprite ISprite {
-                get { return invSprite; }
-            }
-
-            public Sprite DSprite {
-                get { return detailSprite; }
+            public Sprite Sprite {
+                get { return sprite; }
             }
 
             public bool Use() {
@@ -101,9 +96,7 @@ namespace DarosGame {
             }
 
             public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
-                groundSprite = new StaticSprite(cm.Load<Texture2D>("test/orange"));
-                invSprite = new StaticSprite(cm.Load<Texture2D>("test/orange"));
-                detailSprite = new StaticSprite(cm.Load<Texture2D>("test/orange"));
+                sprite = new StaticSprite(cm.Load<Texture2D>("test/orange"));
             }
         }
     }
