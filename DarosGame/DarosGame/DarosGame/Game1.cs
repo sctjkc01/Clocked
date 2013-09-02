@@ -128,11 +128,19 @@ namespace DarosGame {
                     }
                 }
             } else if(StaticVars.currState == GameState.TOADA) {
+                if(adashow == 0f) {
+                    Resources.adaOut.Frame = 0;
+                }
+                Resources.adaOut.Update(gameTime);
                 adashow = Math.Min(adashow + 0.0715f, 1f);
                 if(adashow == 1f) {
                     StaticVars.currState = GameState.ADA;
                 }
             } else if(StaticVars.currState == GameState.FROMADA) {
+                if(adashow == 1f) {
+                    Resources.adaAway.Frame = 0;
+                }
+                Resources.adaAway.Update(gameTime);
                 adashow = Math.Max(adashow - 0.0715f, 0f);
                 if(adashow == 0f) {
                     StaticVars.currState = GameState.GAME;
@@ -168,12 +176,12 @@ namespace DarosGame {
             bool pDrawn = false;
             foreach(GameObject obj in StaticVars.CurrRoom.Objects) {
                 if(obj.Loc.Y > StaticVars.player.Loc.Y && !pDrawn) {
-                    StaticVars.player.Draw(spriteBatch);
+                    DrawProtag();
                     pDrawn = true;
                 }
                 obj.Draw(spriteBatch);
             }
-            if(!pDrawn) StaticVars.player.Draw(spriteBatch);
+            if(!pDrawn) DrawProtag();
 
             if(StaticVars.currState == GameState.FADEOUT || StaticVars.currState == GameState.FADEIN) {
                 spriteBatch.Draw(whitePixel, new Vector2(0, 0), null, new Color(0, 0, 0, opacity), 0f, Vector2.Zero, new Vector2(800, 600), SpriteEffects.None, 0);
@@ -193,6 +201,28 @@ namespace DarosGame {
         public void FullToggle() {
             graphics.IsFullScreen = !graphics.IsFullScreen;
             graphics.ApplyChanges();
+        }
+
+        public void DrawProtag() {
+            Point playerLoc = StaticVars.player.Loc;
+            switch(StaticVars.currState) {
+                case GameState.GAME:
+                case GameState.FADEOUT:
+                case GameState.FADEIN:
+                    StaticVars.player.Draw(spriteBatch);
+                    break;
+                case GameState.TOADA:
+                    Resources.adaOut.Draw(spriteBatch, new Point(playerLoc.X - StaticVars.Camera.X, playerLoc.Y - StaticVars.Camera.Y));
+                    break;
+                case GameState.ADA:
+                    Resources.adaUse.Draw(spriteBatch, new Point(playerLoc.X - StaticVars.Camera.X, playerLoc.Y - StaticVars.Camera.Y));
+                    break;
+                case GameState.FROMADA:
+                    Resources.adaAway.Draw(spriteBatch, new Point(playerLoc.X - StaticVars.Camera.X, playerLoc.Y - StaticVars.Camera.Y));
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

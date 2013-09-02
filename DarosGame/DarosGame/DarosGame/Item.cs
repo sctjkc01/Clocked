@@ -28,7 +28,7 @@ namespace DarosGame {
             }
 
             public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
-                sprite = item.Sprite;
+                // No extra resload
             }
 
             public void Interact() {
@@ -46,7 +46,7 @@ namespace DarosGame {
             }
 
             public override void Draw(SpriteBatch sb) {
-                sprite.Draw(sb, new Point(location.X - StaticVars.Camera.X, location.Y - StaticVars.Camera.Y), new Vector2(0.5f, 0.5f));
+                item.Sprite.Draw(sb, new Point(location.X - StaticVars.Camera.X, location.Y - StaticVars.Camera.Y), new Vector2(0.5f, 0.5f));
             }
         }
 
