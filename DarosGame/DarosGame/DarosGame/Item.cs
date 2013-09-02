@@ -28,7 +28,7 @@ namespace DarosGame {
             }
 
             public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
-                sprite = item.sprite;
+                sprite = item.Sprite;
             }
 
             public void Interact() {
@@ -56,7 +56,7 @@ namespace DarosGame {
             protected string name, desc;
 
             protected OnUse function;
-            protected Sprite sprite;
+            protected StaticSprite sprite;
 
             protected List<ItemFlags> flags;
 
@@ -70,7 +70,7 @@ namespace DarosGame {
                 get { return desc; }
             }
 
-            public Sprite Sprite {
+            public StaticSprite Sprite {
                 get { return sprite; }
             }
 

@@ -50,6 +50,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Items\I - Loaded Dice.png">
+      <Name>I - Loaded Dice</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="test\floor.png">
       <Name>floor</Name>
       <Importer>TextureImporter</Importer>
@@ -1149,6 +1154,18 @@
   <ItemGroup>
     <Compile Include="Menu\Top Menu\Skill Menu.png">
       <Name>Skill Menu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Items\I - Pretty Okay Alloy.png">
+      <Name>I - Pretty Okay Alloy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Items\I - Wrecked Robot Head.png">
+      <Name>I - Wrecked Robot Head</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
