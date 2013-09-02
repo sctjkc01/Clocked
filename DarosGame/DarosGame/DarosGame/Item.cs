@@ -110,5 +110,16 @@ namespace DarosGame {
                 sprite = new StaticSprite(cm.Load<Texture2D>("Items/I - Loaded Dice"));
             }
         }
+
+        public class PrettyOkayAlloy : Item {
+            public PrettyOkayAlloy() {
+                name = "Pretty Okay Alloy";
+                desc = "tdb";
+            }
+
+            public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
+                sprite = new StaticSprite(cm.Load<Texture2D>("Items/I - Pretty Okay Alloy"));
+            }
+        }
     }
 }
