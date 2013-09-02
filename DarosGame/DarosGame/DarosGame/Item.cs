@@ -103,7 +103,7 @@ namespace DarosGame {
         public class LoadedDice : Item {
             public LoadedDice() {
                 name = "Loaded Dice";
-                desc = "tdb";
+                desc = "tbd";
             }
 
             public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
@@ -114,11 +114,22 @@ namespace DarosGame {
         public class PrettyOkayAlloy : Item {
             public PrettyOkayAlloy() {
                 name = "Pretty Okay Alloy";
-                desc = "tdb";
+                desc = "tbd";
             }
 
             public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
                 sprite = new StaticSprite(cm.Load<Texture2D>("Items/I - Pretty Okay Alloy"));
+            }
+        }
+
+        public class WreckedRobotHead : Item {
+            public WreckedRobotHead() {
+                name = "Wrecked Robot Head";
+                desc = "tbd";
+            }
+
+            public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
+                sprite = new StaticSprite(cm.Load<Texture2D>("Items/I - Wrecked Robot Head"));
             }
         }
     }
