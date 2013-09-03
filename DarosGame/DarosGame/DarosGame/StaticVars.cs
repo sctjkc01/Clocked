@@ -28,7 +28,7 @@ namespace DarosGame {
 
     public static class EZTweakVars {
         // Interaction Variables
-        public static int PlayerInteractRange = 100; //Units: Pixels
+        public static int PlayerInteractRange = 20; //Units: Pixels
         public static Keys InteractKey = Keys.E; //Replace letter as you will [REQUIRES RESTART]
 
         // Chat Variable

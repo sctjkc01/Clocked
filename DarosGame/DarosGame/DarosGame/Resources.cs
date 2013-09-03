@@ -43,8 +43,8 @@ namespace DarosGame {
             for(int i = 1; i < 15; i++) {
                 adaAnim[i-1] = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("protag/Overworld/arms/Check Menu/Check Menu " + i), new Microsoft.Xna.Framework.Point(35, 102));
             }
-            adaOut = new StickXNAEngine.Graphic.AnimateSprite(new TimeSpan(900000));
-            adaAway = new StickXNAEngine.Graphic.AnimateSprite(new TimeSpan(900000));
+            adaOut = new StickXNAEngine.Graphic.AnimateSprite(new TimeSpan(400000));
+            adaAway = new StickXNAEngine.Graphic.AnimateSprite(new TimeSpan(400000));
             for(int i = 0; i < 14; i++) {
                 adaOut.Add(adaAnim[i]);
                 adaAway.Add(adaAnim[13 - i]);
