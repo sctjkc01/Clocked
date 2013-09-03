@@ -128,24 +128,27 @@ namespace DarosGame {
                     }
                 }
             } else if(StaticVars.currState == GameState.TOADA) {
-                if(adashow == 0f) {
-                    Resources.adaOut.Frame = 0;
+                if(Resources.adaOut.Frame < 13) {
+                    Resources.adaOut.Update(gameTime);
                 }
-                Resources.adaOut.Update(gameTime);
                 adashow = Math.Min(adashow + 0.0715f, 1f);
                 if(adashow == 1f) {
                     StaticVars.currState = GameState.ADA;
                 }
             } else if(StaticVars.currState == GameState.FROMADA) {
-                if(adashow == 1f) {
-                    Resources.adaAway.Frame = 0;
+                if(Resources.adaAway.Frame < 13) {
+                    Resources.adaAway.Update(gameTime);
                 }
-                Resources.adaAway.Update(gameTime);
-                adashow = Math.Max(adashow - 0.0715f, 0f);
-                if(adashow == 0f) {
+                if(adashow != 0f) {
+                    adashow = Math.Max(adashow - 0.0715f, 0f);
+                }
+                if(adashow == 0f && Resources.adaAway.Frame == 13) {
                     StaticVars.currState = GameState.GAME;
                 }
             } else if(StaticVars.currState == GameState.ADA) {
+                if(Resources.adaOut.Frame < 13) {
+                    Resources.adaOut.Update(gameTime);
+                }
                 StaticVars.adamenu.Update(gameTime);
             }
 
@@ -212,12 +215,16 @@ namespace DarosGame {
                     StaticVars.player.Draw(spriteBatch);
                     break;
                 case GameState.TOADA:
+                case GameState.ADA:
+                    if(adashow == 0f) {
+                        Resources.adaOut.Frame = 0;
+                    }
                     Resources.adaOut.Draw(spriteBatch, new Point(playerLoc.X - StaticVars.Camera.X, playerLoc.Y - StaticVars.Camera.Y));
                     break;
-                case GameState.ADA:
-                    Resources.adaUse.Draw(spriteBatch, new Point(playerLoc.X - StaticVars.Camera.X, playerLoc.Y - StaticVars.Camera.Y));
-                    break;
                 case GameState.FROMADA:
+                    if(adashow == 1f) {
+                        Resources.adaAway.Frame = 0;
+                    }
                     Resources.adaAway.Draw(spriteBatch, new Point(playerLoc.X - StaticVars.Camera.X, playerLoc.Y - StaticVars.Camera.Y));
                     break;
                 default:
