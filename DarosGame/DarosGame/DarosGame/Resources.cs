@@ -15,7 +15,6 @@ namespace DarosGame {
 
         public static StickXNAEngine.Graphic.StaticSprite curs, cursClick, cursDrag;
         public static StickXNAEngine.Graphic.AnimateSprite adaOut, adaAway;
-        public static StickXNAEngine.Graphic.StaticSprite adaUse;
 
         public static void InitResources(ContentManager cm) {
             fonts["04b03m"] = cm.Load<SpriteFont>("04b03");
@@ -39,8 +38,6 @@ namespace DarosGame {
             curs = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("Menu/Top Menu/Cursor"), new Microsoft.Xna.Framework.Point(4, 3));
             cursClick = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("Menu/Top Menu/Cursor"), new Microsoft.Xna.Framework.Point(4, 3));
             cursDrag = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("Menu/Top Menu/Cursor"), new Microsoft.Xna.Framework.Point(4, 3));
-
-            adaUse = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("protag/Overworld/arms/Check Menu/Check Menu 14"), new Microsoft.Xna.Framework.Point(35, 102));
 
             StickXNAEngine.Graphic.StaticSprite[] adaAnim = new StickXNAEngine.Graphic.StaticSprite[14];
             for(int i = 1; i < 15; i++) {
