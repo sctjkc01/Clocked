@@ -40,14 +40,14 @@ namespace DarosGame {
             cursClick = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("Menu/Top Menu/Cursor"), new Microsoft.Xna.Framework.Point(4, 3));
             cursDrag = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("Menu/Top Menu/Cursor"), new Microsoft.Xna.Framework.Point(4, 3));
 
-            adaUse = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("protag/Overworld/arms/Check Menu/Check Menu 14"), new Microsoft.Xna.Framework.Point(37, 103));
+            adaUse = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("protag/Overworld/arms/Check Menu/Check Menu 14"), new Microsoft.Xna.Framework.Point(35, 102));
 
             StickXNAEngine.Graphic.StaticSprite[] adaAnim = new StickXNAEngine.Graphic.StaticSprite[14];
             for(int i = 1; i < 15; i++) {
-                adaAnim[i-1] = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("protag/Overworld/arms/Check Menu/Check Menu " + i), new Microsoft.Xna.Framework.Point(37, 103));
+                adaAnim[i-1] = new StickXNAEngine.Graphic.StaticSprite(cm.Load<Texture2D>("protag/Overworld/arms/Check Menu/Check Menu " + i), new Microsoft.Xna.Framework.Point(35, 102));
             }
-            adaOut = new StickXNAEngine.Graphic.AnimateSprite(new TimeSpan(105000));
-            adaAway = new StickXNAEngine.Graphic.AnimateSprite(new TimeSpan(105000));
+            adaOut = new StickXNAEngine.Graphic.AnimateSprite(new TimeSpan(900000));
+            adaAway = new StickXNAEngine.Graphic.AnimateSprite(new TimeSpan(900000));
             for(int i = 0; i < 14; i++) {
                 adaOut.Add(adaAnim[i]);
                 adaAway.Add(adaAnim[13 - i]);
