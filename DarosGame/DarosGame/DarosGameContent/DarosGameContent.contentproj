@@ -1133,6 +1133,8 @@
   <ItemGroup>
     <Compile Include="test\orange.png">
       <Name>orange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="test\Test Room Red.png">
       <Name>Test Room Red</Name>
@@ -1143,6 +1145,8 @@
   <ItemGroup>
     <Compile Include="Menu\Top Menu\TabFwd-Back.png">
       <Name>TabFwd-Back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
     <Compile Include="Locations\Derelict Laboratory\Room 1.png">
       <Name>Room 1</Name>
