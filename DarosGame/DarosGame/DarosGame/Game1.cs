@@ -46,6 +46,7 @@ namespace DarosGame {
             StaticVars.player = new Protagonist();
             StaticVars.player.Loc = new Point(588, 696);
             StaticVars.adamenu = new ADAMenu();
+            new DerelictLaboratory.Room1();
 
             StaticVars.inst = this;
 

@@ -11,7 +11,7 @@ namespace DarosGame {
     public abstract class Room : IRequireResource, INeedMoreInit {
         protected StaticSprite background;
         protected List<GameObject> objs = new List<GameObject>();
-        protected List<Rectangle> walls = new List<Rectangle>();
+        protected Texture2D wallDef;
 
         protected Dictionary<Rectangle, Pair<Room, Point>> exits = new Dictionary<Rectangle, Pair<Room, Point>>();
 
@@ -41,8 +41,13 @@ namespace DarosGame {
         }
 
         public bool CollidingWithWall(GameObject go) {
-            foreach(Rectangle alpha in walls) {
-                if(go.CollisionBox.Intersects(alpha)) {
+            if(!new Rectangle(0, 0, wallDef.Width, wallDef.Height).Contains(go.CollisionBox)) {
+                return true;
+            }
+            Color[] pixels = new Color[go.CollisionBox.Width * go.CollisionBox.Height];
+            wallDef.GetData<Color>(0, go.CollisionBox, pixels, 0, pixels.Length);
+            foreach(Color alpha in pixels) {
+                if(alpha == Color.White) {
                     return true;
                 }
             }
@@ -81,25 +86,6 @@ namespace DarosGame {
                 return null;
             }
         }
-
-
-        /* // Nowhere close to done.;
-        public static List<Rectangle> MakeCurve(Rectangle loc, Direction corner) {
-            List<Rectangle> rtn = new List<Rectangle>();
-            
-            loc.Width = loc.Height = Math.Max(loc.Width, loc.Height);
-
-            int x = loc.X, y = loc.Y, width = loc.Width, height = loc.Height / 10;
-            int x2 = loc.X + loc.Width - height;
-            while(rtn.Count < 7) {
-                rtn.Add(new Rectangle(x, y, width, height));
-                rtn.Add(new Rectangle(x2, y + width, height, width - height));
-
-            }
-
-            return rtn;
-        }
-        */
     }
 
     public class TestRoom : Room {
@@ -108,35 +94,8 @@ namespace DarosGame {
             // Registers the room as valid in Room Registry
             RegisterRoom("Test Room", this);
 
-            // Main walls
-            walls.Add(new Rectangle(1023, 0, 377, 1300));
-            walls.Add(new Rectangle(952, 1111, 71, 189));
-            walls.Add(new Rectangle(824, 1127, 128, 173));
-            walls.Add(new Rectangle(0, 1111, 824, 189));
-            walls.Add(new Rectangle(0, 0, 374, 1111));
-            walls.Add(new Rectangle(373, 0, 162, 582));
-            walls.Add(new Rectangle(535, 0, 97, 476));
-            walls.Add(new Rectangle(632, 0, 391, 582));
-
-            // BL big corner
-            walls.Add(new Rectangle(374, 1077, 3, 34));
-            walls.Add(new Rectangle(377, 1087, 5, 24));
-            walls.Add(new Rectangle(382, 1095, 5, 16));
-            walls.Add(new Rectangle(387, 1108, 21, 3));
-            walls.Add(new Rectangle(387, 1104, 11, 4));
-            walls.Add(new Rectangle(387, 1100, 5, 4));
-
-            // TR big corner
-            walls.Add(new Rectangle(989, 582, 34, 3));
-            walls.Add(new Rectangle(1020, 585, 3, 31));
-            walls.Add(new Rectangle(997, 585, 23, 5));
-            walls.Add(new Rectangle(1015, 590, 5, 18));
-            walls.Add(new Rectangle(1002, 590, 13, 7));
-            walls.Add(new Rectangle(1008, 597, 7, 6));
-
             // Adding Game Objects to room
             Add(new SceneryGameObjects.Sign(new Point(749,601)));
-
 
             // Have Game Objects in room sorted by Y value
             objs.Sort();
@@ -145,12 +104,32 @@ namespace DarosGame {
         public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
             // Define the resource used as background
             background = new StaticSprite(cm.Load<Texture2D>("test/floor"));
+            // Defines the Tex2D that is used to check for walls
+            wallDef = cm.Load<Texture2D>("test/Test Room Red");
         }
 
         public override void FinalizeInit() {
             // Define the exits of this room
-            exits.Add(new Rectangle(535, 538, 97, 44), new Pair<Room, Point>(Room.GetRoom("Test Room"), new Point(885, 1060)));
-            exits.Add(new Rectangle(825, 1087, 127, 40), new Pair<Room, Point>(Room.GetRoom("Test Room"), new Point(582, 598)));
+            exits.Add(new Rectangle(535, 538, 97, 44), new Pair<Room, Point>(Room.GetRoom("DLRoom1"), new Point(593, 884)));
+        }
+    }
+
+    namespace DerelictLaboratory {
+        public class Room1 : Room {
+            public Room1() : base() {
+                RegisterRoom("DLRoom1", this);
+
+                objs.Sort();
+            }
+
+            public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
+                background = new StaticSprite(cm.Load<Texture2D>("Locations/Derelict Laboratory/Room 1"));
+                wallDef = cm.Load<Texture2D>("Locations/Derelict Laboratory/Room 1 Walls");
+            }
+
+            public override void FinalizeInit() {
+                exits.Add(new Rectangle(516, 918, 169, 41), new Pair<Room, Point>(Room.GetRoom("Test Room"), new Point(582, 598)));
+            }
         }
     }
 }
