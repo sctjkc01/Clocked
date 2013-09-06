@@ -41,6 +41,9 @@ namespace DarosGame {
         }
 
         public bool CollidingWithWall(GameObject go) {
+            if(!new Rectangle(0, 0, wallDef.Width, wallDef.Height).Contains(go.CollisionBox)) {
+                return true;
+            }
             Color[] pixels = new Color[go.CollisionBox.Width * go.CollisionBox.Height];
             wallDef.GetData<Color>(0, go.CollisionBox, pixels, 0, pixels.Length);
             foreach(Color alpha in pixels) {
@@ -94,7 +97,6 @@ namespace DarosGame {
             // Adding Game Objects to room
             Add(new SceneryGameObjects.Sign(new Point(749,601)));
 
-
             // Have Game Objects in room sorted by Y value
             objs.Sort();
         }
@@ -108,8 +110,26 @@ namespace DarosGame {
 
         public override void FinalizeInit() {
             // Define the exits of this room
-            exits.Add(new Rectangle(535, 538, 97, 44), new Pair<Room, Point>(Room.GetRoom("Test Room"), new Point(885, 1060)));
-            exits.Add(new Rectangle(825, 1087, 127, 40), new Pair<Room, Point>(Room.GetRoom("Test Room"), new Point(582, 598)));
+            exits.Add(new Rectangle(535, 538, 97, 44), new Pair<Room, Point>(Room.GetRoom("DLRoom1"), new Point(593, 884)));
+        }
+    }
+
+    namespace DerelictLaboratory {
+        public class Room1 : Room {
+            public Room1() : base() {
+                RegisterRoom("DLRoom1", this);
+
+                objs.Sort();
+            }
+
+            public override void LoadRes(Microsoft.Xna.Framework.Content.ContentManager cm) {
+                background = new StaticSprite(cm.Load<Texture2D>("Locations/Derelict Laboratory/Room 1"));
+                wallDef = cm.Load<Texture2D>("Locations/Derelict Laboratory/Room 1 Walls");
+            }
+
+            public override void FinalizeInit() {
+                exits.Add(new Rectangle(516, 918, 169, 41), new Pair<Room, Point>(Room.GetRoom("Test Room"), new Point(582, 598)));
+            }
         }
     }
 }
